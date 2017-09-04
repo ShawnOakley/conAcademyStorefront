@@ -45,15 +45,7 @@ contract StoreFront {
     function StoreFront() {
         owner = msg.sender;
         adminPrivileges[owner] = true;
-        inventory[0].id = 0;
-        inventory[0].price = 2;
-        inventory[0].stock = 2;
-        inventory[0].active = true;
-        inventory[1].id = 1;
-        inventory[1].price = 3;
-        inventory[1].stock = 3;
-        inventory[1].active = true;
-        inventoryLength = 2;
+        inventoryLength = 0;
     }
 
     function addAdmin(address newAdmin)
@@ -145,7 +137,6 @@ contract StoreFront {
     function buyProduct(uint256 productId)
         payable
         external
-        canAfford(productId)
         isAvailable(productId)
     {
         bool completeBool = true;

@@ -6,7 +6,6 @@ const Promise = require("bluebird");
 const truffleContract = require("truffle-contract");
 const $ = require("jquery");
 const storeFrontJson = require("../../build/contracts/StoreFront.json");
-console.log("Angular", angular);
 if (typeof web3 !== "undefined") {
     window.web3 = new Web3(web3.currentProvider);
 } else {
@@ -28,7 +27,10 @@ storefrontApp.controller("StorefrontController",
             permissions: {
                 owner: false,
                 admin: false
-            }
+            },
+            contractBalance: 0,
+            balance: 0,
+            balanceInEth: 0
        };
         Storefront.deployed()
             .then(function(_instance) {
@@ -44,13 +46,13 @@ storefrontApp.controller("StorefrontController",
                 });
             }
             $scope.updateBalance();
+            $scope.getInitialInfo();
         }.bind(this))
 
         $scope.updateBalance = function() {
-            web3.eth.getBalancePromise($scope.data.account.value).then(function(balance) {
-                $scope.balance = balance.toString();
-                $scope.balanceInEth = web3.fromWei(parseInt(balance.toString()), "ether");
-                $scope.getInitialInfo();
+            return web3.eth.getBalancePromise($scope.data.account.value).then(function(balance) {
+                $scope.data.balance = balance.toString();
+                $scope.data.balanceInEth = web3.fromWei(parseInt(balance.toString()), "ether");
                 $scope.$apply();
             });
         }
@@ -62,16 +64,61 @@ storefrontApp.controller("StorefrontController",
             ];
 
             Promise.all(promiseArray).then(function(permissionArray) {
-                console.log("account", permissionArray);
                 $scope.data.permissions = {
                     owner: permissionArray[0],
                     admin: permissionArray[1]
                 };
+                $scope.updateBalance();
                 $scope.$apply();
             });
         }
 
+        $scope.withdrawFunds = function() {
+            $scope.contract.withdraw({from: $scope.data.account.value}).then(function(_trx) {
+                $scope.data.contractBalance = 0;
+                return $scope.updateBalance();
+            }).then(()=>{
+                $scope.$apply();
+            }).catch(function(err) {
+                console.log("err", err);
+            });
+        }
+
+        $scope.addProduct = function() {
+            const newId = $scope.products.length;
+            $scope.contract.addProduct(newId, 5000000000000000000, 9, {
+                from: $scope.data.account.value,
+                gas: 200000
+            }).then((_trx)=>{
+                console.log("trx", _trx)
+                $scope.updateProducts();
+            }).catch((err)=>{
+                console.log("err", err);
+            });
+        }
+
+        $scope.updateProducts = function() {
+                $scope.contract.getInventoryLength().then(function(_inventoryLength) {
+                    var promiseArray = [];
+                    for (var i = 0; i < parseInt(_inventoryLength.toString()); i++) {
+                        promiseArray.push($scope.contract.inventory(i, {gas: 200000}));
+                    }
+                    return Promise.all(promiseArray);
+                }).then(function(returnedPromiseObjects) {
+                    $scope.products = returnedPromiseObjects.map((returnedProduct) => {
+                        return {
+                            id: parseInt(returnedProduct[0].toString()),
+                            price: parseInt(returnedProduct[1].toString()),
+                            stock: parseInt(returnedProduct[2].toString()),
+                            active: returnedProduct[3]
+                        }
+                    });
+                    $scope.$apply();
+                });
+        }
+
         $scope.buyProduct = function(id, price) {
+            console.log("price", price)
                 $scope.contract.buyProduct(
                     id,
                     {
@@ -98,11 +145,12 @@ storefrontApp.controller("StorefrontController",
                     });
                     return web3.eth.getBalancePromise($scope.data.account.value)
                 }).then(function(balance) {
-                    $scope.balance = balance.toString();
-                    $scope.balanceInEth = web3.fromWei(parseInt(balance.toString()), "ether");
+                    $scope.data.balance = balance.toString();
+                    $scope.data.balanceInEth = web3.fromWei(parseInt(balance.toString()), "ether");
                     return $scope.contract.getBalance();
                 }).then(function(_balance) {
-                    $scope.contractBalance = parseInt(_balance.toString());
+                    console.log("CONTRACTBALANCE",  parseInt(_balance.toString()));
+                    $scope.data.contractBalance = parseInt(_balance.toString());
                     $scope.$apply();
                 });
         };
@@ -114,7 +162,7 @@ storefrontApp.controller("StorefrontController",
                 }).then(function(_trx) {
                     return $scope.contract.getBalance();
                 }).then(function(_balance) {
-                    $scope.contractBalance = parseInt(_balance.toString());
+                    $scope.data.contractBalance = parseInt(_balance.toString());
                     return $scope.contract.getInventoryLength();
                 }).then(function(_inventoryLength) {
                     var promiseArray = [];

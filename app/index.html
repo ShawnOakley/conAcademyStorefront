@@ -10,12 +10,16 @@
 </head>
 <body ng-controller="StorefrontController">
 <h6>Your account: {{ data.account.value }}</h6>
-<h6>Your balance: {{ balance }} (wei) {{balanceInEth}} (ether)</h6>
+<h6>Your balance: {{ data.balance }} (wei) {{data.balanceInEth}} (ether)</h6>
 <div ng-if="data.permissions.owner">
-    <button ng-click="withdrawFunds">Withdraw funds</button>
-    <div>Available funds to withdraw: {{contractBalance}}</div>
+    <div ng-if="data.contractBalance">
+        <button ng-click="withdrawFunds()">Withdraw funds</button>
+    </div>
+    <div>Available funds to withdraw: {{data.contractBalance}}</div>
 </div>
-<div ng-if="data.permissions.admin">Has admin permissions</div>
+<div ng-if="data.permissions.admin">
+    <button ng-click="addProduct()">Add product</button>
+</div>
 <select
     ng-model="data.account"
     ng-options="account.label for account in accounts track by account.value"
