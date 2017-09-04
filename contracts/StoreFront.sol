@@ -139,9 +139,7 @@ contract StoreFront {
         public
         isOwner
         returns(uint) {
-        uint balanceToTransfer = this.balance;
-        this.balance = 0;
-        msg.sender.transfer(balanceToTransfer);
+        msg.sender.transfer(this.balance);
     }
 
     function buyProduct(uint256 productId)

@@ -56,7 +56,6 @@ storefrontApp.controller("StorefrontController",
         }
 
         $scope.activeAccountChanged = function() {
-            console.log("account", $scope.data.account);
             var promiseArray =  [
                 $scope.contract.getOwnerStatus($scope.data.account.value, {from: $scope.data.account.value}),
                 $scope.contract.getAdminStatus($scope.data.account.value, {from: $scope.data.account.value})
@@ -101,16 +100,21 @@ storefrontApp.controller("StorefrontController",
                 }).then(function(balance) {
                     $scope.balance = balance.toString();
                     $scope.balanceInEth = web3.fromWei(parseInt(balance.toString()), "ether");
-                    $scope.$apply();
                     return $scope.contract.getBalance();
-                }).then(function(balance) {
+                }).then(function(_balance) {
+                    $scope.contractBalance = parseInt(_balance.toString());
+                    $scope.$apply();
                 });
         };
         $scope.getInitialInfo = function() {
             if ($scope.contract && $scope.data.account.value) {
                 $scope.contract.addAdmin($scope.data.account.value, {from: $scope.data.account.value}).then(function(_trx) {
+                    $scope.activeAccountChanged();
                     return $scope.contract.addAdmin($scope.accounts[1].value, {from: $scope.data.account.value});
                 }).then(function(_trx) {
+                    return $scope.contract.getBalance();
+                }).then(function(_balance) {
+                    $scope.contractBalance = parseInt(_balance.toString());
                     return $scope.contract.getInventoryLength();
                 }).then(function(_inventoryLength) {
                     var promiseArray = [];

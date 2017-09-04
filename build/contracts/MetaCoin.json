@@ -1696,12 +1696,12 @@
         }
       },
       "links": {
-        "ConvertLib": "0x2e096f8ec9f4aec9c3dd2a914dcf567934302dba"
+        "ConvertLib": "0x33f27a49c1b75f44c92d9d91572318d08a77db2d"
       },
-      "address": "0x8fd3309a4ace944de088b66280df49f57cc65524",
-      "updated_at": 1504495426271
+      "address": "0x6bbd6d96ffb3953feb464d311da9f710e13e157c",
+      "updated_at": 1504495922402
     }
   },
   "schema_version": "0.0.5",
-  "updated_at": 1504495426271
+  "updated_at": 1504495922402
 }
