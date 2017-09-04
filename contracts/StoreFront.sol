@@ -44,7 +44,15 @@ contract StoreFront {
     function StoreFront() {
         owner = msg.sender;
         adminPrivileges[owner] = true;
-        inventoryLength = 0;
+        inventory[0].id = 0;
+        inventory[0].price = 2;
+        inventory[0].stock = 2;
+        inventory[0].active = true;
+        inventory[1].id = 1;
+        inventory[1].price = 3;
+        inventory[1].stock = 3;
+        inventory[1].active = true;
+        inventoryLength = 2;
     }
 
     function setOwner(address newOwner)

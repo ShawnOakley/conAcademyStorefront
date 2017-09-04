@@ -109,15 +109,6 @@ storefrontApp.controller("StorefrontController",
                 $scope.contract.addAdmin($scope.data.account.value, {from: $scope.data.account.value}).then(function(_trx) {
                     return $scope.contract.addAdmin($scope.accounts[1].value, {from: $scope.data.account.value});
                 }).then(function(_trx) {
-                    $scope.data.permissions = {  owner: true, admin: true };
-                    return $scope.contract.addProduct(0, 2, 2, {gas: 200000, from: $scope.data.account.value});
-                }).then(function(_trx, err) {
-                    return $scope.contract.addProduct(1, 3, 3, {gas: 200000, from: $scope.data.account.value});
-                }).catch(function(_trx, err) {
-                    return $scope.contract.getInventoryLength();
-                }).then(function(_inventoryLength) {
-                    return $scope.contract.removeProduct(0, {gas: 200000, from: $scope.data.account.value});
-                }).then(function(_trx) {
                     return $scope.contract.getInventoryLength();
                 }).then(function(_inventoryLength) {
                     var promiseArray = [];
