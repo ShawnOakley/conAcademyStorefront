@@ -109,8 +109,6 @@ storefrontApp.controller("StorefrontController",
                 $scope.contract.addAdmin($scope.data.account.value, {from: $scope.data.account.value}).then(function(_trx) {
                     return $scope.contract.addAdmin($scope.accounts[1].value, {from: $scope.data.account.value});
                 }).then(function(_trx) {
-                    return $scope.contract.setOwner($scope.data.account.value, {from: $scope.data.account.value});
-                }).then(function(_trx) {
                     $scope.data.permissions = {  owner: true, admin: true };
                     return $scope.contract.addProduct(0, 2, 2, {gas: 200000, from: $scope.data.account.value});
                 }).then(function(_trx, err) {

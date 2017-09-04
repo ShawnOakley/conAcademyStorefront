@@ -41,7 +41,7 @@ contract StoreFront {
         _;
     }
 
-    function Storefront() {
+    function StoreFront() {
         owner = msg.sender;
         adminPrivileges[owner] = true;
         inventoryLength = 0;
