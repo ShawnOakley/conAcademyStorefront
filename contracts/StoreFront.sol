@@ -14,6 +14,7 @@ contract StoreFront {
     mapping(address => bool) public adminPrivileges;
 
     address public owner;
+    uint256 balance;
 
     event ProductAdded(address adder, uint256 productId, uint256 price, uint256 initialStock);
     event ProductPurchased(address purchaser, uint256 productId);
@@ -55,14 +56,9 @@ contract StoreFront {
         inventoryLength = 2;
     }
 
-    function setOwner(address newOwner)
-        public
-        returns (bool) {
-        owner = newOwner;
-        return true;
-    }
-
     function addAdmin(address newAdmin)
+        public
+        isOwner
         returns (bool) {
         adminPrivileges[newAdmin] = true;
         AdminAdded(newAdmin);
@@ -70,6 +66,8 @@ contract StoreFront {
     }
 
     function removeAdmin(address adminAddress)
+        public
+        isOwner
         returns (bool) {
         adminPrivileges[adminAddress] = false;
         AdminRemoved(adminAddress);
@@ -108,6 +106,13 @@ contract StoreFront {
         return inventoryLength;
     }
 
+    function getBalance()
+    constant
+    returns(uint256) {
+        return this.balance;
+    }
+
+
     function addProduct(uint256 id, uint256 price, uint256 initialStock)
         public
         isAdmin
@@ -130,6 +135,15 @@ contract StoreFront {
         return true;
     }
 
+    function withdraw()
+        public
+        isOwner
+        returns(uint) {
+        uint balanceToTransfer = this.balance;
+        this.balance = 0;
+        msg.sender.transfer(balanceToTransfer);
+    }
+
     function buyProduct(uint256 productId)
         payable
         external
@@ -139,6 +153,7 @@ contract StoreFront {
         bool completeBool = true;
         if (msg.value > inventory[productId].price) {
             uint256 remainder = msg.value - inventory[productId].price;
+            balance += inventory[productId].price;
             completeBool = msg.sender.send(remainder);
         }
         if (completeBool) {

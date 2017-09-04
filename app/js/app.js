@@ -102,6 +102,8 @@ storefrontApp.controller("StorefrontController",
                     $scope.balance = balance.toString();
                     $scope.balanceInEth = web3.fromWei(parseInt(balance.toString()), "ether");
                     $scope.$apply();
+                    return $scope.contract.getBalance();
+                }).then(function(balance) {
                 });
         };
         $scope.getInitialInfo = function() {
