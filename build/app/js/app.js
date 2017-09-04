@@ -16007,7 +16007,9 @@ storefrontApp.controller("StorefrontController",
             },
             contractBalance: 0,
             balance: 0,
-            balanceInEth: 0
+            balanceInEth: 0,
+            priceInput: 0,
+            stockInput: 0
        };
         Storefront.deployed()
             .then(function(_instance) {
@@ -16034,6 +16036,11 @@ storefrontApp.controller("StorefrontController",
             });
         }
 
+        $scope.resetInput = () => {
+            $scope.data.priceInput = 0;
+            $scope.data.stockInput = 0;
+        }
+
         $scope.activeAccountChanged = function() {
             var promiseArray =  [
                 $scope.contract.getOwnerStatus($scope.data.account.value, {from: $scope.data.account.value}),
@@ -16046,6 +16053,7 @@ storefrontApp.controller("StorefrontController",
                     admin: permissionArray[1]
                 };
                 $scope.updateBalance();
+                $scope.resetInput();
                 $scope.$apply();
             });
         }
@@ -16063,11 +16071,12 @@ storefrontApp.controller("StorefrontController",
 
         $scope.addProduct = function() {
             const newId = $scope.products.length;
-            $scope.contract.addProduct(newId, 5000000000000000000, 9, {
+            $scope.contract.addProduct(newId, $scope.data.priceInput, $scope.data.stockInput, {
                 from: $scope.data.account.value,
                 gas: 200000
             }).then((_trx)=>{
                 console.log("trx", _trx)
+                $scope.resetInput();
                 $scope.updateProducts();
             }).catch((err)=>{
                 console.log("err", err);

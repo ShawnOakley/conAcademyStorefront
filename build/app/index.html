@@ -9,6 +9,11 @@
 
 </head>
 <body ng-controller="StorefrontController">
+<select
+        ng-model="data.account"
+        ng-options="account.label for account in accounts track by account.value"
+        ng-change="activeAccountChanged()"
+></select>
 <h6>Your account: {{ data.account.value }}</h6>
 <h6>Your balance: {{ data.balance }} (wei) {{data.balanceInEth}} (ether)</h6>
 <div ng-if="data.permissions.owner">
@@ -18,15 +23,17 @@
     <div>Available funds to withdraw: {{data.contractBalance}}</div>
 </div>
 <div ng-if="data.permissions.admin">
+    <input
+        ng-model="data.priceInput"
+        type="number"
+    ></input>
+    <input
+        ng-model="data.stockInput"
+        type="number"
+    ></input>
     <button ng-click="addProduct()">Add product</button>
 </div>
-<select
-    ng-model="data.account"
-    ng-options="account.label for account in accounts track by account.value"
-    ng-change="activeAccountChanged()"
->
 
-</select>
 <ul>
     <li ng-repeat="product in products">
         <div ng-model="data.account" ng-if="product.active">
