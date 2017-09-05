@@ -92,6 +92,13 @@ contract StoreFront {
         return inventory[inventoryId].price;
     }
 
+    function getInventoryStatus(uint256 inventoryId)
+    constant
+    returns(bool) {
+        return inventory[inventoryId].active;
+    }
+
+
     function getInventoryLength()
         constant
         returns(uint256) {
@@ -138,6 +145,7 @@ contract StoreFront {
         payable
         external
         isAvailable(productId)
+        canAfford(productId)
     {
         bool completeBool = true;
         if (msg.value > inventory[productId].price) {

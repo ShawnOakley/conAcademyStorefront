@@ -32,11 +32,29 @@ storefrontApp.controller("StorefrontController",
             balance: 0,
             balanceInEth: 0,
             priceInput: 0,
-            stockInput: 0
+            stockInput: 0,
+            productLog: []
        };
         Storefront.deployed()
             .then(function(_instance) {
                 $scope.contract = _instance;
+                $scope.productWatcher = $scope.contract.ProductAdded(
+                    {}, {fromBlock:0}
+                ).watch(function(err, newProduct) {
+                    if (err) {
+                        console.log("Add Product error:", err);
+                    } else {
+                        $scope.data.productLog.push(newProduct);
+                        let newProductData = {
+                            id: parseInt(newProduct.args.productId.toString()),
+                            price: parseInt(newProduct.args.initialStock.toString()),
+                            stock: parseInt(newProduct.args.price.toString()),
+                            active: true
+                        }
+                        $scope.products.push(newProductData);
+                        $scope.$apply();
+                    }
+                });
                 $scope.$apply();
             }.bind(this));
 
@@ -100,34 +118,32 @@ storefrontApp.controller("StorefrontController",
             }).then((_trx)=>{
                 console.log("trx", _trx)
                 $scope.resetInput();
-                $scope.updateProducts();
             }).catch((err)=>{
                 console.log("err", err);
             });
         }
 
         $scope.updateProducts = function() {
-                $scope.contract.getInventoryLength().then(function(_inventoryLength) {
-                    var promiseArray = [];
-                    for (var i = 0; i < parseInt(_inventoryLength.toString()); i++) {
-                        promiseArray.push($scope.contract.inventory(i, {gas: 200000}));
+            $scope.contract.getInventoryLength().then(function(_inventoryLength) {
+                var promiseArray = [];
+                for (var i = 0; i < parseInt(_inventoryLength.toString()); i++) {
+                    promiseArray.push($scope.contract.inventory(i, {gas: 200000}));
+                }
+                return Promise.all(promiseArray);
+            }).then(function(returnedPromiseObjects) {
+                $scope.products = returnedPromiseObjects.map((returnedProduct) => {
+                    return {
+                        id: parseInt(returnedProduct[0].toString()),
+                        price: parseInt(returnedProduct[1].toString()),
+                        stock: parseInt(returnedProduct[2].toString()),
+                        active: returnedProduct[3]
                     }
-                    return Promise.all(promiseArray);
-                }).then(function(returnedPromiseObjects) {
-                    $scope.products = returnedPromiseObjects.map((returnedProduct) => {
-                        return {
-                            id: parseInt(returnedProduct[0].toString()),
-                            price: parseInt(returnedProduct[1].toString()),
-                            stock: parseInt(returnedProduct[2].toString()),
-                            active: returnedProduct[3]
-                        }
-                    });
-                    $scope.$apply();
                 });
+                $scope.$apply();
+            });
         }
 
         $scope.buyProduct = function(id, price) {
-            console.log("price", price)
                 $scope.contract.buyProduct(
                     id,
                     {
@@ -158,7 +174,6 @@ storefrontApp.controller("StorefrontController",
                     $scope.data.balanceInEth = web3.fromWei(parseInt(balance.toString()), "ether");
                     return $scope.contract.getBalance();
                 }).then(function(_balance) {
-                    console.log("CONTRACTBALANCE",  parseInt(_balance.toString()));
                     $scope.data.contractBalance = parseInt(_balance.toString());
                     $scope.$apply();
                 });
