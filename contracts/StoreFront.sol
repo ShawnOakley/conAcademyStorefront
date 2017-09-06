@@ -17,6 +17,7 @@ contract StoreFront {
     uint256 balance;
 
     event ProductAdded(address adder, uint256 productId, uint256 price, uint256 initialStock);
+    event ProductRemoved(address adder, uint256 productId);
     event ProductPurchased(address purchaser, uint256 productId);
     event ProductSoldOut(uint256 productId);
     event AdminAdded(address newAdmin);
@@ -128,10 +129,11 @@ contract StoreFront {
     function removeProduct(uint256 id)
         public
         isAdmin
-        returns(bool) {
+        returns(uint) {
         assert(inventory[id].active == true);
         inventory[id].active = false;
-        return true;
+        ProductRemoved(msg.sender, id);
+        return id;
     }
 
     function withdraw()

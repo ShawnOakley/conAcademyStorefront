@@ -69,7 +69,7 @@ contract('StoreFront', function(accounts) {
     it("should allow for buying a product and set active false when inventory reaches zero, and allows for withdrawal",
     function() {
         let instance;
-        
+
         return deployedStorefront.then(function(_instance) {
             instance = _instance;
             return instance.addProduct(0, 10, 1);

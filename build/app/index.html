@@ -16,6 +16,7 @@
 ></select>
 <h6>Your account: {{ data.account.value }}</h6>
 <h6>Your balance: {{ data.balance }} (wei) {{data.balanceInEth}} (ether)</h6>
+<h6>Your testCoin balance: {{data.erc20Balances["testToken"][data.account.value]}} </h6>
 <div ng-if="data.permissions.owner">
     <div ng-if="data.contractBalance">
         <button ng-click="withdrawFunds()">Withdraw funds</button>
@@ -43,6 +44,9 @@
             <button ng-click="buyProduct(product.id, product.price)">
                 Buy
             </button>
+            <button ng-click="purchaseWithERC20Token('testToken', product.id, 1)">
+                Buy with testToken
+            </button>
         </div>
         <div ng-if="!product.active">
             <div>Not available</div>
@@ -51,6 +55,11 @@
             <div>Stock: {{product.stock}}</div>
             <button ng-disabled="true">
                 Buy
+            </button>
+        </div>
+        <div ng-if="product.active && data.permissions.admin">
+            <button ng-click="removeProduct(product.id)">
+                Remove Product
             </button>
         </div>
 
