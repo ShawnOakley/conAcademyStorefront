@@ -249,7 +249,6 @@ storefrontApp.controller("StorefrontController",
             let tokenContract;
             let intBalance;
             let productPrice;
-            console.log("CALLED");
             switch (tokenName) {
                 case "testToken":
                     tokenContract = $scope.thirdPartyToken;
@@ -275,7 +274,6 @@ storefrontApp.controller("StorefrontController",
                             gas: 200000
                         }
                     ).then((_trx) => {
-                        console.log("_trx", _trx);
                         $scope.updateERC20TokenBalance(tokenName);
                         $scope.adjustProductInventory(productId, -amount);
                         $scope.$apply();
@@ -302,12 +300,10 @@ storefrontApp.controller("StorefrontController",
         // product related functions ********************************
 
         $scope.adjustProductInventory = function(productId, amount) {
-                console.log("adjustProductInventory", productId, amount)
             $scope.contract.adjustProductInventory(productId, amount, {
                 from: $scope.owner,
                 gas: 200000
             }).then((_trx)=>{
-                console.log("adjustProductInventory trx", _trx)
                 $scope.updateProduct(productId);
             }).catch((err)=>{
                 console.log("err", err);
