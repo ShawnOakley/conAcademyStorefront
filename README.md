@@ -8,6 +8,7 @@ General account information is displayed at the top.
 User can select active account via select input at top.
 Users with appropriate permissions can add products.
 Product Lists can display product lists, which have Buy and (with appropriate permissions) Remove buttons.
+When product stock runs out or product is removed, buy button is disabled.
 When funds are available to withdraw, the owner can withdraw funds via button at bottom of page.
 
 * Currently needs to be run in incognito due to conflicts with Metamask

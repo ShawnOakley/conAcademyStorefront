@@ -18,6 +18,7 @@ contract StoreFront {
 
     event ProductAdded(address adder, uint256 productId, uint256 price, uint256 initialStock);
     event ProductRemoved(address adder, uint256 productId);
+    event ProductReactivated(address adder, uint256 productId);
     event ProductPurchased(address purchaser, uint256 productId);
     event ProductSoldOut(uint256 productId);
     event AdminAdded(address newAdmin);
@@ -133,6 +134,16 @@ contract StoreFront {
         assert(inventory[id].active == true);
         inventory[id].active = false;
         ProductRemoved(msg.sender, id);
+        return id;
+    }
+
+    function reactivateProduct(uint256 id)
+    public
+    isAdmin
+    returns(uint) {
+        assert(inventory[id].active == false);
+        inventory[id].active = true;
+        ProductReactivated(msg.sender, id);
         return id;
     }
 

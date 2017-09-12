@@ -32,9 +32,9 @@
     </div>
 </div>
 
-<div class="form-group" ng-if="data.permissions.admin" style="margin-left:4rem;">
+<div ng-if="data.permissions.admin" style="margin-left:4rem;">
     <h4>Product form</h4>
-    <div class="col-xs-8">
+    <div>
         <div>
             <label for="priceAmount">Price amount:</label>
             <input
@@ -52,13 +52,13 @@
             ></input>
         </div>
     </div>
-    <div class="col-xs-4" >
+    <div >
         <button class="btn btn-primary" ng-click="addProduct()">Add product</button>
     </div>
 </div>
 
-<h3 style="margin-left:4rem;">Product List</h3>
-<div class="container">
+<div>
+    <h3 style="margin-left:4rem;">Product List</h3>
     <button ng-click="toggleShow('homeMerchant')" style="margin-left:4rem;" data-toggle="collapse"
             class="btn btn-primary" data-target="#homeMerchant">Home Merchant Products</button>
     <div style="margin-top:1rem;" id="homeMerchant" ng-if="data.toggleState['homeMerchant']">
@@ -86,12 +86,17 @@
                     <button class="btn btn-primary" ng-disabled="true">
                         Buy
                     </button>
+                    <button class="btn btn-primary"
+                            ng-if="!product.active && data.permissions.admin && product.stock > 0"
+                            ng-click="reactivateProduct(product.id)">
+                        Reactivate Product
+                    </button>
                 </div>
             </li>
         </ul>
     </div>
 </div>
-<div ng-if="data.permissions.owner" style="margin-left:4rem;">
+<div class="container" ng-if="data.permissions.owner" style="margin-left:4rem;">
     <div ng-if="data.contractBalance">
         <button ng-click="withdrawFunds()">Withdraw funds</button>
     </div>

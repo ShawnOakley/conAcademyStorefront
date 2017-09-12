@@ -300,6 +300,7 @@ storefrontApp.controller("StorefrontController",
             }).then((_trx)=>{
                 console.log("trx", _trx)
                 $scope.resetInput();
+                $scope.$apply();
             }).catch((err)=>{
                 console.log("err", err);
             });
@@ -314,12 +315,26 @@ storefrontApp.controller("StorefrontController",
                 from: $scope.data.account.value,
                 gas: 200000
             }).then((_trx)=>{
-                console.log("trx", _trx)
                 $scope.resetInput();
+                $scope.$apply();
             }).catch((err)=>{
                 console.log("err", err);
             });
         }
+
+        $scope.reactivateProduct = function(productId) {
+            $scope.contract.reactivateProduct(productId, {
+                from: $scope.data.account.value,
+                gas: 200000
+            }).then((_trx)=>{
+                $scope.resetInput();
+                $scope.updateProducts();
+                $scope.$apply();
+            }).catch((err)=>{
+                console.log("err", err);
+            });
+        }
+
 
         $scope.updateProducts = function() {
             $scope.contract.getInventoryLength().then(function(_inventoryLength) {
