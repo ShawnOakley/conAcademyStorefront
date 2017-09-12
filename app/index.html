@@ -56,38 +56,44 @@
 </div>
 
 <h3 style="margin-left:4rem;">Product List</h3>
-<ul style="margin-left:4rem;">
-    <li ng-repeat="product in products">
-        <div ng-model="data.account" ng-if="product.active">
-            <div>ID: {{product.id}}</div>
-            <div>Price: {{product.price}}</div>
-            <div>Stock: {{product.stock}}</div>
-            <button class="btn btn-primary"  ng-click="buyProduct(product.id, product.price)">
-                Buy
-            </button>
-            <button class="btn btn-primary" ng-click="purchaseWithERC20Token('testToken', product.id, 1)">
-                Buy with testToken
-            </button>
-            <button class="btn btn-primary" ng-if="product.active && data.permissions.admin" ng-click="removeProduct(product.id)">
-                Remove Product
-            </button>
-        </div>
-        <div ng-if="!product.active">
-            <div>Not available</div>
-            <div>ID: {{product.id}}</div>
-            <div>Price: {{product.price}}</div>
-            <div>Stock: {{product.stock}}</div>
-            <button class="btn btn-primary" ng-disabled="true">
-                Buy
-            </button>
-        </div>
-    </li>
-</ul>
+<div class="container">
+    <button ng-click="toggleShow('homeMerchant')" style="margin-left:4rem;" data-toggle="collapse"
+            class="btn btn-primary" data-target="#homeMerchant">Home Merchant Products</button>
+    <div style="margin-top:1rem;" id="homeMerchant" ng-if="data.toggleState['homeMerchant']">
+        <ul style="margin-left:4rem;">
+            <li ng-repeat="product in products">
+                <div ng-model="data.account" ng-if="product.active">
+                    <div>ID: {{product.id}}</div>
+                    <div>Price: {{product.price}}</div>
+                    <div>Stock: {{product.stock}}</div>
+                    <button class="btn btn-primary"  ng-click="buyProduct(product.id, product.price)">
+                        Buy
+                    </button>
+                    <button class="btn btn-primary" ng-click="purchaseWithERC20Token('testToken', product.id, 1)">
+                        Buy with testToken
+                    </button>
+                    <button class="btn btn-primary" ng-if="product.active && data.permissions.admin" ng-click="removeProduct(product.id)">
+                        Remove Product
+                    </button>
+                </div>
+                <div ng-if="!product.active">
+                    <div>Not available</div>
+                    <div>ID: {{product.id}}</div>
+                    <div>Price: {{product.price}}</div>
+                    <div>Stock: {{product.stock}}</div>
+                    <button class="btn btn-primary" ng-disabled="true">
+                        Buy
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
 <div ng-if="data.permissions.owner" style="margin-left:4rem;">
     <div ng-if="data.contractBalance">
         <button ng-click="withdrawFunds()">Withdraw funds</button>
     </div>
-    <div>Available funds to withdraw: {{data.contractBalance}}</div>
+    <div style="margin-top:1rem;">Available funds to withdraw: {{data.contractBalance}}</div>
 </div>
 </body>
 </html>

@@ -5309,8 +5309,216 @@
       "links": {},
       "address": "0x3240d0d5bf1b687ea4442220dee987f7549adfc3",
       "updated_at": 1505169373766
+    },
+    "1505196298751": {
+      "events": {
+        "0x7356fa97386fd8eedb6423c2102817d12f666667a979141224ac430d3f2a564e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "initialStock",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductAdded",
+          "type": "event"
+        },
+        "0x8d73b39fd1c1240bd6b0e38e6190cfa73f69346002fdbfa18c2156e6f91474d3": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductRemoved",
+          "type": "event"
+        },
+        "0x621472621639c4a230476ed039dff3e99add1be6bca286f58ed565e08e781a5f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductPurchased",
+          "type": "event"
+        },
+        "0xa406ebcf5151e82763e43f65a824a89658d6e69a6d4b005507827ff898779cdd": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductSoldOut",
+          "type": "event"
+        },
+        "0x44d6d25963f097ad14f29f06854a01f575648a1ef82f30e562ccd3889717e339": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminAdded",
+          "type": "event"
+        },
+        "0xa3b62bc36326052d97ea62d63c3d60308ed4c3ea8ac079dd8499f1e9c4f80c0f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "removedAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminRemoved",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xdcb9012dd8189590c67089c9ca70ff25683ccf38",
+      "updated_at": 1505196320405
+    },
+    "1505196938679": {
+      "events": {
+        "0x7356fa97386fd8eedb6423c2102817d12f666667a979141224ac430d3f2a564e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "initialStock",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductAdded",
+          "type": "event"
+        },
+        "0x8d73b39fd1c1240bd6b0e38e6190cfa73f69346002fdbfa18c2156e6f91474d3": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductRemoved",
+          "type": "event"
+        },
+        "0x621472621639c4a230476ed039dff3e99add1be6bca286f58ed565e08e781a5f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductPurchased",
+          "type": "event"
+        },
+        "0xa406ebcf5151e82763e43f65a824a89658d6e69a6d4b005507827ff898779cdd": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductSoldOut",
+          "type": "event"
+        },
+        "0x44d6d25963f097ad14f29f06854a01f575648a1ef82f30e562ccd3889717e339": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminAdded",
+          "type": "event"
+        },
+        "0xa3b62bc36326052d97ea62d63c3d60308ed4c3ea8ac079dd8499f1e9c4f80c0f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "removedAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminRemoved",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xa7d0cfe906c79ec69aa0411f2471ba583d367454",
+      "updated_at": 1505196944610
     }
   },
   "schema_version": "0.0.5",
-  "updated_at": 1505169373766
+  "updated_at": 1505196944610
 }

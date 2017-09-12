@@ -38,7 +38,10 @@ storefrontApp.controller("StorefrontController",
             priceInput: 0,
             stockInput: 0,
             productLog: [],
-            erc20Balances: {}
+            erc20Balances: {},
+            toggleState: {
+                homeMerchant: true
+            }
        };
 
         const deploymentPromises = Promise.all([
@@ -300,6 +303,10 @@ storefrontApp.controller("StorefrontController",
             }).catch((err)=>{
                 console.log("err", err);
             });
+        }
+
+        $scope.toggleShow = function(merchantName) {
+            $scope.data.toggleState[merchantName] = !$scope.data.toggleState[merchantName];
         }
 
         $scope.removeProduct = function(productId) {
