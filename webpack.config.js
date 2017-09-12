@@ -5,6 +5,15 @@ module.exports = {
         filename: "app.js"
     },
     module: {
-        loaders: []
+        loaders: [
+            {
+              test: /\.scss$/,
+              loader: 'style!css!sass'
+            },
+            {
+              test: /\.css$/,
+              loader: 'style!css'
+            }
+        ]
     }
 }

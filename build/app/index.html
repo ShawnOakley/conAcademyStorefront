@@ -3,10 +3,8 @@
 <head>
 <title>Transfer MetaCoins</title>
 <meta charset="utf-8">
-
-
-
-
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="js/app.js"></script>
 </head>
 <body ng-controller="StorefrontController">
 <select
@@ -32,7 +30,7 @@
         ng-model="data.stockInput"
         type="number"
     ></input>
-    <button ng-click="addProduct()">Add product</button>
+    <button  class="btn btn-primary" ng-click="addProduct()">Add product</button>
 </div>
 
 <ul>
@@ -65,7 +63,5 @@
 
     </li>
 </ul>
-<script src="bower_components/angular/angular.js"></script>
-<script src="js/app.js"></script>
 </body>
 </html>
