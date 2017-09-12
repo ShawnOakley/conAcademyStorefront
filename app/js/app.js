@@ -152,11 +152,19 @@ storefrontApp.controller("StorefrontController",
 
        // helper functions ********************************
 
+        /*
+        Converts big number to int for parsing contractual returned values
+        */
+
         $scope.convertBigNumber = (bigNumber) => {
             return parseInt(bigNumber.toString());
         };
 
         // update scope variables functions ********************************
+
+        /*
+        Updates balance and applies to scope
+        */
 
         $scope.updateBalance = function() {
             return web3.eth.getBalancePromise($scope.data.account.value).then(function(balance) {
@@ -165,6 +173,10 @@ storefrontApp.controller("StorefrontController",
                 $scope.$apply();
             });
         }
+
+        /*
+        Updates erc20 token balance by name of token and applies to scope
+        */
 
         $scope.updateERC20TokenBalance = function(tokenNameParams) {
             let tokenName = tokenNameParams;
@@ -188,6 +200,10 @@ storefrontApp.controller("StorefrontController",
                 $scope.$apply();
             })
         }
+
+        /*
+        Gets initial info from contract and applies to scope
+        */
 
         $scope.getInitialInfo = function() {
             if ($scope.contract && $scope.data.account.value) {
@@ -219,10 +235,18 @@ storefrontApp.controller("StorefrontController",
             }
         }
 
+        /*
+        Resets input values
+        */
+
         $scope.resetInput = () => {
             $scope.data.priceInput = 0;
             $scope.data.stockInput = 0;
         }
+
+        /*
+        Gets new info for scope based on new account number
+        */
 
         $scope.activeAccountChanged = function() {
             var promiseArray =  [
@@ -243,6 +267,10 @@ storefrontApp.controller("StorefrontController",
         }
 
         // payment related functions ********************************
+
+        /*
+        Purchase with ERC20 token
+        */
 
         $scope.purchaseWithERC20Token = function(tokenNameParam, productId, amount) {
             let tokenName = tokenNameParam;
@@ -284,7 +312,9 @@ storefrontApp.controller("StorefrontController",
             });
         };
 
-
+        /*
+        Withdraw funds
+        */
 
         $scope.withdrawFunds = function() {
             $scope.contract.withdraw({from: $scope.data.account.value}).then(function(_trx) {
@@ -299,6 +329,10 @@ storefrontApp.controller("StorefrontController",
 
         // product related functions ********************************
 
+        /*
+        Adjusts product inventory, for use with erc20 purchases
+        */
+
         $scope.adjustProductInventory = function(productId, amount) {
             $scope.contract.adjustProductInventory(productId, amount, {
                 from: $scope.owner,
@@ -309,6 +343,10 @@ storefrontApp.controller("StorefrontController",
                 console.log("err", err);
             });
         }
+
+        /*
+        Adds product
+        */
 
         $scope.addProduct = function() {
             const newId = $scope.products.length;
@@ -324,9 +362,17 @@ storefrontApp.controller("StorefrontController",
             });
         }
 
+        /*
+        Toggles show of products based on merchant name
+        */
+
         $scope.toggleShow = function(merchantName) {
             $scope.data.toggleState[merchantName] = !$scope.data.toggleState[merchantName];
         }
+
+        /*
+        Removes product
+        */
 
         $scope.removeProduct = function(productId) {
             $scope.contract.removeProduct(productId, {
@@ -341,6 +387,10 @@ storefrontApp.controller("StorefrontController",
             });
         }
 
+        /*
+        Reactivates product
+        */
+
         $scope.reactivateProduct = function(productId) {
             $scope.contract.reactivateProduct(productId, {
                 from: $scope.data.account.value,
@@ -354,6 +404,9 @@ storefrontApp.controller("StorefrontController",
             });
         }
 
+        /*
+        Updates product
+        */
 
         $scope.updateProducts = function() {
             $scope.contract.getInventoryLength().then(function(_inventoryLength) {
@@ -375,6 +428,10 @@ storefrontApp.controller("StorefrontController",
             });
         }
 
+        /*
+        Update product
+        */
+
         $scope.updateProduct = function(index) {
             $scope.contract.inventory(index, {gas: 200000}).then(function(returnedItem) {
                 $scope.products[index] = {
@@ -386,6 +443,10 @@ storefrontApp.controller("StorefrontController",
                 $scope.$apply();
             });
         }
+
+        /*
+        Buys product with ether
+        */
 
         $scope.buyProduct = function(id, price) {
                 $scope.contract.buyProduct(

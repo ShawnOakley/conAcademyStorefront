@@ -5,11 +5,13 @@
 - As the owner you can make payments or withdraw value from the contract.
 
 General account information is displayed at the top.
+When funds are available to withdraw, the owner can withdraw funds via button in account info.
+ERC20 token transactions are immediately added and removed from the token balance, without need to manually withdraw.
 User can select active account via select input at top.
 Users with appropriate permissions can add products.
 Product Lists can display product lists, which have Buy and (with appropriate permissions) Remove buttons.
 When product stock runs out or product is removed, buy button is disabled.
-When funds are available to withdraw, the owner can withdraw funds via button at bottom of page.
+Admins can add and remove product inventory as needed.
 
 * Currently needs to be run in incognito due to conflicts with Metamask
 

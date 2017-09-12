@@ -29,6 +29,12 @@
         <div class="card-text">
             <label>Your testCoin balance:</label> {{data.erc20Balances["testToken"][data.account.value]}}
         </div>
+        <div ng-if="data.permissions.owner">
+            <div style="margin:1rem 0;"><label>Available funds to withdraw:</label> {{data.contractBalance}}</div>
+            <div ng-if="data.contractBalance">
+                <button ng-click="withdrawFunds()">Withdraw funds</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -92,15 +98,18 @@
                         Reactivate Product
                     </button>
                 </div>
+                <div ng-if="data.permissions.admin" style="margin-top:1rem;">
+                    <label for="stockAmount">Add stock</label>
+                    <button class="btn btn-primary" ng-click="adjustProductInventory(product.id, 1)">
+                        +
+                    </button>
+                    <button class="btn btn-primary" ng-click="adjustProductInventory(product.id, -1)">
+                        -
+                    </button>
+                </div>
             </li>
         </ul>
     </div>
-</div>
-<div class="container" ng-if="data.permissions.owner" style="margin-left:4rem;">
-    <div ng-if="data.contractBalance">
-        <button ng-click="withdrawFunds()">Withdraw funds</button>
-    </div>
-    <div style="margin-top:1rem;">Available funds to withdraw: {{data.contractBalance}}</div>
 </div>
 </body>
 </html>
