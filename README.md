@@ -10,8 +10,7 @@ Users with appropriate permissions can add products.
 Product Lists can display product lists, which have Buy and (with appropriate permissions) Remove buttons.
 When funds are available to withdraw, the owner can withdraw funds via button at bottom of page.
 
-*Everytime you switch between MetaMask accounts you will have to reload the page for the app to get linked to your account.
-
+* Currently needs to be run in incognito due to conflicts with Metamask
 
 ## Steps for installation and running
 
