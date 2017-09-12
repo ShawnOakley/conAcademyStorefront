@@ -97,7 +97,7 @@ contract StoreFront {
 
     function adjustProductInventory(uint256 inventoryId, uint256 amount)
     public
-    isOwner
+    isAdmin
     returns (uint256) {
         inventory[inventoryId].stock += amount;
         if (inventory[inventoryId].stock == 0) {
