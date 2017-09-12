@@ -22,6 +22,8 @@ Storefront.setProvider(web3.currentProvider);
 const ERC20TokenContract = truffleContract(erc20TokenContractJson);
 ERC20TokenContract.setProvider(web3.currentProvider);
 
+const ethToTestCoinConversionRate = 2;
+
 const storefrontApp = angular.module("storefrontApp", []);
 storefrontApp.controller("StorefrontController",
     ["$scope","$location","$http","$q","$window","$timeout",
@@ -235,6 +237,7 @@ storefrontApp.controller("StorefrontController",
                 };
                 $scope.updateBalance();
                 $scope.resetInput();
+                $scope.updateERC20TokenBalance("testToken");
                 $scope.$apply();
             });
         }
@@ -246,6 +249,7 @@ storefrontApp.controller("StorefrontController",
             let tokenContract;
             let intBalance;
             let productPrice;
+            console.log("CALLED");
             switch (tokenName) {
                 case "testToken":
                     tokenContract = $scope.thirdPartyToken;
@@ -258,26 +262,31 @@ storefrontApp.controller("StorefrontController",
                 from: $scope.owner
             }).then((_balance) => {
                 // check to see if they can afford product
-                    intBalance = $scope.convertBigNumber(_balance);
-                    $scope.data.erc20Balances[tokenName][$scope.data.account.value] = intBalance;
-                    productPrice = $scope.products.filter(_product => productId == _product.id)[0].price;
+                intBalance = $scope.convertBigNumber(_balance);
+                $scope.data.erc20Balances[tokenName][$scope.data.account.value] = intBalance;
+                productPrice = $scope.products.filter(_product => productId == _product.id)[0].price  * ethToTestCoinConversionRate;
                 if (intBalance >= (amount * productPrice)) {
                     $scope.thirdPartyToken.transferFrom(
                         $scope.data.account.value,
                         $scope.owner,
-                        productPrice,
+                        amount * productPrice,
                         {
                             from: $scope.data.account.value,
                             gas: 200000
                         }
                     ).then((_trx) => {
+                        console.log("_trx", _trx);
                         $scope.updateERC20TokenBalance(tokenName);
+                        $scope.adjustProductInventory(productId, -amount);
+                        $scope.$apply();
                     })
                 } else {
                     $scope.$apply();
                 }
             });
         };
+
+
 
         $scope.withdrawFunds = function() {
             $scope.contract.withdraw({from: $scope.data.account.value}).then(function(_trx) {
@@ -291,6 +300,19 @@ storefrontApp.controller("StorefrontController",
         }
 
         // product related functions ********************************
+
+        $scope.adjustProductInventory = function(productId, amount) {
+                console.log("adjustProductInventory", productId, amount)
+            $scope.contract.adjustProductInventory(productId, amount, {
+                from: $scope.owner,
+                gas: 200000
+            }).then((_trx)=>{
+                console.log("adjustProductInventory trx", _trx)
+                $scope.updateProduct(productId);
+            }).catch((err)=>{
+                console.log("err", err);
+            });
+        }
 
         $scope.addProduct = function() {
             const newId = $scope.products.length;
@@ -316,6 +338,7 @@ storefrontApp.controller("StorefrontController",
                 gas: 200000
             }).then((_trx)=>{
                 $scope.resetInput();
+                $scope.updateProduct(productId);
                 $scope.$apply();
             }).catch((err)=>{
                 console.log("err", err);
@@ -328,7 +351,7 @@ storefrontApp.controller("StorefrontController",
                 gas: 200000
             }).then((_trx)=>{
                 $scope.resetInput();
-                $scope.updateProducts();
+                $scope.updateProduct(productId);
                 $scope.$apply();
             }).catch((err)=>{
                 console.log("err", err);
@@ -348,13 +371,22 @@ storefrontApp.controller("StorefrontController",
                     return {
                         id: parseInt(returnedProduct[0].toString()),
                         price: parseInt(returnedProduct[1].toString()),
-                        erc20TokenPrices: {
-                            testToken: parseInt(returnedProduct[1].toString())
-                        },
                         stock: parseInt(returnedProduct[2].toString()),
                         active: returnedProduct[3]
                     }
                 });
+                $scope.$apply();
+            });
+        }
+
+        $scope.updateProduct = function(index) {
+            $scope.contract.inventory(index, {gas: 200000}).then(function(returnedItem) {
+                $scope.products[index] = {
+                    id: parseInt(returnedItem[0].toString()),
+                    price: parseInt(returnedItem[1].toString()),
+                    stock: parseInt(returnedItem[2].toString()),
+                    active: returnedItem[3]
+                }
                 $scope.$apply();
             });
         }
@@ -368,22 +400,6 @@ storefrontApp.controller("StorefrontController",
                         from: $scope.data.account.value
                     }
                 ).then(function(_trx) {
-                    return $scope.contract.getInventoryLength();
-                }).then(function(_inventoryLength) {
-                    var promiseArray = [];
-                    for (var i = 0; i < parseInt(_inventoryLength.toString()); i++) {
-                        promiseArray.push($scope.contract.inventory(i, {gas: 200000}));
-                    }
-                    return Promise.all(promiseArray);
-                }).then(function(returnedPromiseObjects) {
-                    $scope.products = returnedPromiseObjects.map((returnedProduct) => {
-                        return {
-                            id: parseInt(returnedProduct[0].toString()),
-                            price: parseInt(returnedProduct[1].toString()),
-                            stock: parseInt(returnedProduct[2].toString()),
-                            active: returnedProduct[3]
-                        }
-                    });
                     return web3.eth.getBalancePromise($scope.data.account.value)
                 }).then(function(balance) {
                     $scope.data.balance = balance.toString();
@@ -391,6 +407,7 @@ storefrontApp.controller("StorefrontController",
                     return $scope.contract.getBalance();
                 }).then(function(_balance) {
                     $scope.data.contractBalance = parseInt(_balance.toString());
+                    $scope.updateProduct(id);
                     $scope.$apply();
                 });
         };

@@ -94,6 +94,20 @@ contract StoreFront {
         return inventory[inventoryId].price;
     }
 
+
+    function adjustProductInventory(uint256 inventoryId, uint256 amount)
+    public
+    isOwner
+    returns (uint256) {
+        inventory[inventoryId].stock += amount;
+        if (inventory[inventoryId].stock == 0) {
+            removeProduct(inventoryId);
+            ProductSoldOut(inventoryId);
+        }
+        return inventory[inventoryId].stock;
+    }
+
+
     function getInventoryStatus(uint256 inventoryId)
     constant
     returns(bool) {
@@ -154,28 +168,27 @@ contract StoreFront {
         msg.sender.transfer(this.balance);
     }
 
-    function buyProduct(uint256 productId)
+    function buyProduct(uint256 inventoryId)
         payable
         external
-        isAvailable(productId)
-        canAfford(productId)
+        isAvailable(inventoryId)
+        canAfford(inventoryId)
     {
         bool completeBool = true;
-        if (msg.value > inventory[productId].price) {
-            uint256 remainder = msg.value - inventory[productId].price;
-            balance += inventory[productId].price;
+        if (msg.value > inventory[inventoryId].price) {
+            uint256 remainder = msg.value - inventory[inventoryId].price;
+            balance += inventory[inventoryId].price;
             completeBool = msg.sender.send(remainder);
         }
         if (completeBool) {
-            Product storage product = inventory[productId];
-            product.stock -= 1;
+            inventory[inventoryId].stock -= 1;
         } else {
             revert();
         }
-        ProductPurchased(msg.sender, productId);
-        if (product.stock == 0) {
-            removeProduct(productId);
-            ProductSoldOut(productId);
+        ProductPurchased(msg.sender, inventoryId);
+        if (inventory[inventoryId].stock == 0) {
+            removeProduct(inventoryId);
+            ProductSoldOut(inventoryId);
         }
     }
 }
