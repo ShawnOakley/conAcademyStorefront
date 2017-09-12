@@ -34,7 +34,7 @@
 
 <div class="form-group" ng-if="data.permissions.admin" style="margin-left:4rem;">
     <h4>Product form</h4>
-    <div class="card-body">
+    <div class="col-xs-8">
         <div>
             <label for="priceAmount">Price amount:</label>
             <input
@@ -51,7 +51,9 @@
                     type="number"
             ></input>
         </div>
-        <button  class="btn btn-primary" ng-click="addProduct()">Add product</button>
+    </div>
+    <div class="col-xs-4" >
+        <button class="btn btn-primary" ng-click="addProduct()">Add product</button>
     </div>
 </div>
 
