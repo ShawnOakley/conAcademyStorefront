@@ -6,6 +6,7 @@ const truffleContract = require("truffle-contract");
 const $ = require("jquery");
 const storeFrontJson = require("../../build/contracts/StoreFront.json");
 const erc20TokenContractJson = require("../../build/contracts/ERC20TokenContract.json");
+const affiliateMerchantHubJson = require("../../build/contracts/affiliateMerchantHub.json");
 
 if (typeof web3 !== "undefined") {
     window.web3 = new Web3(web3.currentProvider);
@@ -21,6 +22,10 @@ Storefront.setProvider(web3.currentProvider);
 
 const ERC20TokenContract = truffleContract(erc20TokenContractJson);
 ERC20TokenContract.setProvider(web3.currentProvider);
+
+const AffiliateMerchantHub = truffleContract(affiliateMerchantHubJson);
+AffiliateMerchantHub.setProvider(web3.currentProvider);
+
 
 const ethToTestCoinConversionRate = 2;
 
@@ -43,17 +48,20 @@ storefrontApp.controller("StorefrontController",
             erc20Balances: {},
             toggleState: {
                 homeMerchant: true
-            }
+            },
+            affiliateMerchants: {}
        };
 
         const deploymentPromises = Promise.all([
             Storefront.deployed(),
-            ERC20TokenContract.deployed()
+            ERC20TokenContract.deployed(),
+            AffiliateMerchantHub.deployed()
         ])
         deploymentPromises
             .then(function(_instance) {
                 $scope.contract = _instance[0];
                 $scope.thirdPartyToken = _instance[1];
+                $scope.affiliateMerchantHub = _instance[2];
                 $scope.productWatcher = $scope.contract.ProductAdded(
                     {}, {fromBlock:0}
                 ).watch(function(err, newProduct) {
@@ -71,6 +79,7 @@ storefrontApp.controller("StorefrontController",
                         $scope.$apply();
                     }
                 });
+
                 $scope.productWatcher = $scope.contract.ProductRemoved(
                     {}, {fromBlock:0}
                 ).watch(function(err, transObj) {
@@ -140,6 +149,18 @@ storefrontApp.controller("StorefrontController",
                 $scope.data.erc20Balances["testToken"][accounts[0]] = $scope.convertBigNumber(balanceArray[0]);
                 $scope.data.erc20Balances["testToken"][accounts[1]] = $scope.convertBigNumber(balanceArray[1]);
                 $scope.data.erc20Balances["testToken"][accounts[2]] = $scope.convertBigNumber(balanceArray[2]);
+                return $scope.affiliateMerchantHub.getAffiliateMerchantsCount()
+            }).then(function(_affiliateMerchantLength){
+                console.log("this", $scope.convertBigNumber(_affiliateMerchantLength));
+                if ($scope.convertBigNumber(_affiliateMerchantLength) === 0) {
+                    $scope.affiliateMerchantHub.createAffiliateMerchant(
+                        "testMerchant",
+                        {
+                            from: accounts[0],
+                            gas: 1000000
+                        });
+                }
+                $scope.constructAffiliateMerchants();
                 $scope.$apply();
             }).catch(function(err) {
                 console.log("_err", err);
@@ -161,6 +182,30 @@ storefrontApp.controller("StorefrontController",
         };
 
         // update scope variables functions ********************************
+
+        /*
+        Generates affiliate merchant structure
+        */
+
+        $scope.constructAffiliateMerchants = function() {
+            $scope.affiliateMerchantHub.getAffiliateMerchantsCount().then((_affiliateMerchantsLength)=>{
+                let merchantRequestArray = [];
+                    console.log($scope.convertBigNumber(_affiliateMerchantsLength))
+                for (var i = 0; i<_affiliateMerchantsLength; i++) {
+                    merchantRequestArray.push($scope.affiliateMerchantHub.getAffiliateMerchant(i));
+                }
+
+                Promise.all(merchantRequestArray).then((returnedMerchantObjects)=>{
+                    console.log("merchants", returnedMerchantObjects);
+                    return $scope.affiliateMerchantHub.addAffiliateMerchantProduct(0, {gas: 200000});
+                }).then((_inventoryLength) => {
+                    return $scope.affiliateMerchantHub.getAffiliateMerchantInventoryLength(0);
+                }).then((_inventoryLength) => {
+                      console.log("_inventoryLength", $scope.convertBigNumber(_inventoryLength));
+                      return $scope.affiliateMerchantHub.getAffiliateMerchantInventoryLength(0);
+                  });
+            })
+        }
 
         /*
         Updates balance and applies to scope
@@ -195,7 +240,6 @@ storefrontApp.controller("StorefrontController",
                     }
                 )
             getBalancePromise.then(function(_erc20Balance) {
-                console.log($scope.convertBigNumber(_erc20Balance));
                 $scope.data.erc20Balances[tokenName][$scope.data.account.value] = $scope.convertBigNumber(_erc20Balance);
                 $scope.$apply();
             })

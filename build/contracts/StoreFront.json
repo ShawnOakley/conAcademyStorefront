@@ -444,7 +444,7 @@
       "type": "event"
     }
   ],
-  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b60038054600160a060020a03191633600160a060020a039081169190911791829055166000908152600260205260408120805460ff19166001908117909155555b5b610b07806100616000396000f300606060405236156100e05763ffffffff60e060020a60003504166312065fe081146100e55780631785f53c1461010a57806317fbb1521461013d5780633ccfd60b146101675780634272ee181461018c5780635a2bd77c146101ce5780635ee95cae146102015780636e0e53321461022957806370480275146102515780637e5577f0146102845780638642269e146102af5780638da5cb5b146102bc5780639937b38f146102eb578063a2a2cd3e1461031b578063c5efea681461034e578063e56d7e1114610381578063e9dc52ad146103a9578063e9f1af82146103d1575b600080fd5b34156100f057600080fd5b6100f86103f6565b60405190815260200160405180910390f35b341561011557600080fd5b610129600160a060020a0360043516610405565b604051901515815260200160405180910390f35b341561014857600080fd5b61012960043561048c565b604051901515815260200160405180910390f35b341561017257600080fd5b6100f86104a7565b60405190815260200160405180910390f35b341561019757600080fd5b6101a2600435610507565b604051938452602084019290925260408084019190915290151560608301526080909101905180910390f35b34156101d957600080fd5b610129600160a060020a0360043516610531565b604051901515815260200160405180910390f35b341561020c57600080fd5b6100f8600435610546565b60405190815260200160405180910390f35b341561023457600080fd5b6100f86004356105f6565b60405190815260200160405180910390f35b341561025c57600080fd5b610129600160a060020a03600435166106a5565b604051901515815260200160405180910390f35b341561028f57600080fd5b6100f860043560243561072f565b60405190815260200160405180910390f35b6102ba6004356107b3565b005b34156102c757600080fd5b6102cf610918565b604051600160a060020a03909116815260200160405180910390f35b34156102f657600080fd5b610129600435602435604435610927565b604051901515815260200160405180910390f35b341561032657600080fd5b610129600160a060020a0360043516610a4b565b604051901515815260200160405180910390f35b341561035957600080fd5b610129600160a060020a0360043516610a62565b604051901515815260200160405180910390f35b341561038c57600080fd5b6100f8600435610a84565b60405190815260200160405180910390f35b34156103b457600080fd5b6100f8600435610a9c565b60405190815260200160405180910390f35b34156103dc57600080fd5b6100f8610ab4565b60405190815260200160405180910390f35b600160a060020a033016315b90565b60035460009033600160a060020a0390811691161461042357600080fd5b600160a060020a03821660009081526002602052604090819020805460ff191690557fa3b62bc36326052d97ea62d63c3d60308ed4c3ea8ac079dd8499f1e9c4f80c0f90839051600160a060020a03909116815260200160405180910390a15060015b5b919050565b60008181526020819052604090206003015460ff165b919050565b60035460009033600160a060020a039081169116146104c557600080fd5b33600160a060020a03166108fc30600160a060020a0316319081150290604051600060405180830381858888f19350505050151561040257600080fd5b5b5b90565b60006020819052908152604090208054600182015460028301546003909301549192909160ff1684565b60026020526000908152604090205460ff1681565b600160a060020a03331660009081526002602052604081205460ff16151561056d57600080fd5b60008281526020819052604090206003015460ff16151560011461058d57fe5b60008281526020819052604090819020600301805460ff191690557f8d73b39fd1c1240bd6b0e38e6190cfa73f69346002fdbfa18c2156e6f91474d3903390849051600160a060020a03909216825260208201526040908101905180910390a150805b5b919050565b600160a060020a03331660009081526002602052604081205460ff16151561061d57600080fd5b60008281526020819052604090206003015460ff161561063957fe5b60008281526020819052604090819020600301805460ff191660011790557fb083d772091ed56ae01bb80d9b0040593b2547bf9b5efd584c679704508df65b903390849051600160a060020a03909216825260208201526040908101905180910390a150805b5b919050565b60035460009033600160a060020a039081169116146106c357600080fd5b600160a060020a03821660009081526002602052604090819020805460ff191660011790557f44d6d25963f097ad14f29f06854a01f575648a1ef82f30e562ccd3889717e33990839051600160a060020a03909116815260200160405180910390a15060015b5b919050565b60035460009033600160a060020a0390811691161461074d57600080fd5b6000838152602081905260409020600201805483019081905515156107985761077583610546565b50600080516020610abc8339815191528360405190815260200160405180910390a15b506000828152602081905260409020600201545b5b92915050565b600081815260208190526040812060020154819083908290116107d557600080fd5b6000848152602081905260409020600101548490349011156107f657600080fd5b600085815260208190526040902060019081015490945034111561085d576000858152602081905260409081902060010154600480548201905534039350600160a060020a0333169084156108fc0290859051600060405180830381858888f19750505050505b83156100e05760008581526020819052604090206002018054600019019055610886565b600080fd5b7f621472621639c4a230476ed039dff3e99add1be6bca286f58ed565e08e781a5f3386604051600160a060020a03909216825260208201526040908101905180910390a1600085815260208190526040902060020154151561090e576108eb85610546565b50600080516020610abc8339815191528560405190815260200160405180910390a15b5b5b505b50505050565b600354600160a060020a031681565b600160a060020a03331660009081526002602052604081205460ff16151561094e57600080fd5b60008481526020819052604090206003015460ff161561096a57fe5b60806040519081016040908152858252602080830186905281830185905260016060840152600087815290819052208151815560208201518160010155604082015181600201556060820151600391909101805460ff19169115159190911790555060015484106109de5760018054810190555b7f7356fa97386fd8eedb6423c2102817d12f666667a979141224ac430d3f2a564e338585856040518085600160a060020a0316600160a060020a0316815260200184815260200183815260200182815260200194505050505060405180910390a15060015b5b9392505050565b600354600160a060020a038281169116145b919050565b600160a060020a03811660009081526002602052604090205460ff165b919050565b6000818152602081905260409020600101545b919050565b6000818152602081905260409020600201545b919050565b6001545b905600a406ebcf5151e82763e43f65a824a89658d6e69a6d4b005507827ff898779cdda165627a7a723058207d93c8c22dc987d18177b85f5e74600c6f7d18b430ade7b82517ba22fa534e020029",
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b60038054600160a060020a03191633600160a060020a039081169190911791829055166000908152600260205260408120805460ff19166001908117909155555b5b610b10806100616000396000f300606060405236156100e05763ffffffff60e060020a60003504166312065fe081146100e55780631785f53c1461010a57806317fbb1521461013d5780633ccfd60b146101675780634272ee181461018c5780635a2bd77c146101ce5780635ee95cae146102015780636e0e53321461022957806370480275146102515780637e5577f0146102845780638642269e146102af5780638da5cb5b146102bc5780639937b38f146102eb578063a2a2cd3e1461031b578063c5efea681461034e578063e56d7e1114610381578063e9dc52ad146103a9578063e9f1af82146103d1575b600080fd5b34156100f057600080fd5b6100f86103f6565b60405190815260200160405180910390f35b341561011557600080fd5b610129600160a060020a0360043516610405565b604051901515815260200160405180910390f35b341561014857600080fd5b61012960043561048c565b604051901515815260200160405180910390f35b341561017257600080fd5b6100f86104a7565b60405190815260200160405180910390f35b341561019757600080fd5b6101a2600435610507565b604051938452602084019290925260408084019190915290151560608301526080909101905180910390f35b34156101d957600080fd5b610129600160a060020a0360043516610531565b604051901515815260200160405180910390f35b341561020c57600080fd5b6100f8600435610546565b60405190815260200160405180910390f35b341561023457600080fd5b6100f86004356105f6565b60405190815260200160405180910390f35b341561025c57600080fd5b610129600160a060020a03600435166106a5565b604051901515815260200160405180910390f35b341561028f57600080fd5b6100f860043560243561072f565b60405190815260200160405180910390f35b6102ba6004356107bc565b005b34156102c757600080fd5b6102cf610921565b604051600160a060020a03909116815260200160405180910390f35b34156102f657600080fd5b610129600435602435604435610930565b604051901515815260200160405180910390f35b341561032657600080fd5b610129600160a060020a0360043516610a54565b604051901515815260200160405180910390f35b341561035957600080fd5b610129600160a060020a0360043516610a6b565b604051901515815260200160405180910390f35b341561038c57600080fd5b6100f8600435610a8d565b60405190815260200160405180910390f35b34156103b457600080fd5b6100f8600435610aa5565b60405190815260200160405180910390f35b34156103dc57600080fd5b6100f8610abd565b60405190815260200160405180910390f35b600160a060020a033016315b90565b60035460009033600160a060020a0390811691161461042357600080fd5b600160a060020a03821660009081526002602052604090819020805460ff191690557fa3b62bc36326052d97ea62d63c3d60308ed4c3ea8ac079dd8499f1e9c4f80c0f90839051600160a060020a03909116815260200160405180910390a15060015b5b919050565b60008181526020819052604090206003015460ff165b919050565b60035460009033600160a060020a039081169116146104c557600080fd5b33600160a060020a03166108fc30600160a060020a0316319081150290604051600060405180830381858888f19350505050151561040257600080fd5b5b5b90565b60006020819052908152604090208054600182015460028301546003909301549192909160ff1684565b60026020526000908152604090205460ff1681565b600160a060020a03331660009081526002602052604081205460ff16151561056d57600080fd5b60008281526020819052604090206003015460ff16151560011461058d57fe5b60008281526020819052604090819020600301805460ff191690557f8d73b39fd1c1240bd6b0e38e6190cfa73f69346002fdbfa18c2156e6f91474d3903390849051600160a060020a03909216825260208201526040908101905180910390a150805b5b919050565b600160a060020a03331660009081526002602052604081205460ff16151561061d57600080fd5b60008281526020819052604090206003015460ff161561063957fe5b60008281526020819052604090819020600301805460ff191660011790557fb083d772091ed56ae01bb80d9b0040593b2547bf9b5efd584c679704508df65b903390849051600160a060020a03909216825260208201526040908101905180910390a150805b5b919050565b60035460009033600160a060020a039081169116146106c357600080fd5b600160a060020a03821660009081526002602052604090819020805460ff191660011790557f44d6d25963f097ad14f29f06854a01f575648a1ef82f30e562ccd3889717e33990839051600160a060020a03909116815260200160405180910390a15060015b5b919050565b600160a060020a03331660009081526002602052604081205460ff16151561075657600080fd5b6000838152602081905260409020600201805483019081905515156107a15761077e83610546565b50600080516020610ac58339815191528360405190815260200160405180910390a15b506000828152602081905260409020600201545b5b92915050565b600081815260208190526040812060020154819083908290116107de57600080fd5b6000848152602081905260409020600101548490349011156107ff57600080fd5b6000858152602081905260409020600190810154909450341115610866576000858152602081905260409081902060010154600480548201905534039350600160a060020a0333169084156108fc0290859051600060405180830381858888f19750505050505b83156100e0576000858152602081905260409020600201805460001901905561088f565b600080fd5b7f621472621639c4a230476ed039dff3e99add1be6bca286f58ed565e08e781a5f3386604051600160a060020a03909216825260208201526040908101905180910390a16000858152602081905260409020600201541515610917576108f485610546565b50600080516020610ac58339815191528560405190815260200160405180910390a15b5b5b505b50505050565b600354600160a060020a031681565b600160a060020a03331660009081526002602052604081205460ff16151561095757600080fd5b60008481526020819052604090206003015460ff161561097357fe5b60806040519081016040908152858252602080830186905281830185905260016060840152600087815290819052208151815560208201518160010155604082015181600201556060820151600391909101805460ff19169115159190911790555060015484106109e75760018054810190555b7f7356fa97386fd8eedb6423c2102817d12f666667a979141224ac430d3f2a564e338585856040518085600160a060020a0316600160a060020a0316815260200184815260200183815260200182815260200194505050505060405180910390a15060015b5b9392505050565b600354600160a060020a038281169116145b919050565b600160a060020a03811660009081526002602052604090205460ff165b919050565b6000818152602081905260409020600101545b919050565b6000818152602081905260409020600201545b919050565b6001545b905600a406ebcf5151e82763e43f65a824a89658d6e69a6d4b005507827ff898779cdda165627a7a72305820fef3fb144a24ee8117907c4571d6cd6f9b1d5b70f1b4e2ebe91736d8c449da1a0029",
   "networks": {
     "1504407867850": {
       "events": {
@@ -6421,8 +6421,1218 @@
       "links": {},
       "address": "0x38186ba4ae709eab9986b57fb30fd7120d57efb7",
       "updated_at": 1505202133522
+    },
+    "1505276571789": {
+      "events": {
+        "0x7356fa97386fd8eedb6423c2102817d12f666667a979141224ac430d3f2a564e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "initialStock",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductAdded",
+          "type": "event"
+        },
+        "0x8d73b39fd1c1240bd6b0e38e6190cfa73f69346002fdbfa18c2156e6f91474d3": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductRemoved",
+          "type": "event"
+        },
+        "0xb083d772091ed56ae01bb80d9b0040593b2547bf9b5efd584c679704508df65b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductReactivated",
+          "type": "event"
+        },
+        "0x621472621639c4a230476ed039dff3e99add1be6bca286f58ed565e08e781a5f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductPurchased",
+          "type": "event"
+        },
+        "0xa406ebcf5151e82763e43f65a824a89658d6e69a6d4b005507827ff898779cdd": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductSoldOut",
+          "type": "event"
+        },
+        "0x44d6d25963f097ad14f29f06854a01f575648a1ef82f30e562ccd3889717e339": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminAdded",
+          "type": "event"
+        },
+        "0xa3b62bc36326052d97ea62d63c3d60308ed4c3ea8ac079dd8499f1e9c4f80c0f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "removedAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminRemoved",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x495070fb8f7890c6dcd7af3fcede38d5ef782551",
+      "updated_at": 1505277566920
+    },
+    "1505278599376": {
+      "events": {
+        "0x7356fa97386fd8eedb6423c2102817d12f666667a979141224ac430d3f2a564e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "initialStock",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductAdded",
+          "type": "event"
+        },
+        "0x8d73b39fd1c1240bd6b0e38e6190cfa73f69346002fdbfa18c2156e6f91474d3": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductRemoved",
+          "type": "event"
+        },
+        "0xb083d772091ed56ae01bb80d9b0040593b2547bf9b5efd584c679704508df65b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductReactivated",
+          "type": "event"
+        },
+        "0x621472621639c4a230476ed039dff3e99add1be6bca286f58ed565e08e781a5f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductPurchased",
+          "type": "event"
+        },
+        "0xa406ebcf5151e82763e43f65a824a89658d6e69a6d4b005507827ff898779cdd": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductSoldOut",
+          "type": "event"
+        },
+        "0x44d6d25963f097ad14f29f06854a01f575648a1ef82f30e562ccd3889717e339": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminAdded",
+          "type": "event"
+        },
+        "0xa3b62bc36326052d97ea62d63c3d60308ed4c3ea8ac079dd8499f1e9c4f80c0f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "removedAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminRemoved",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x96d250b62b16c3f6fe4114c14d263e789da103af",
+      "updated_at": 1505278608937
+    },
+    "1505281191334": {
+      "events": {
+        "0x7356fa97386fd8eedb6423c2102817d12f666667a979141224ac430d3f2a564e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "initialStock",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductAdded",
+          "type": "event"
+        },
+        "0x8d73b39fd1c1240bd6b0e38e6190cfa73f69346002fdbfa18c2156e6f91474d3": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductRemoved",
+          "type": "event"
+        },
+        "0xb083d772091ed56ae01bb80d9b0040593b2547bf9b5efd584c679704508df65b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductReactivated",
+          "type": "event"
+        },
+        "0x621472621639c4a230476ed039dff3e99add1be6bca286f58ed565e08e781a5f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductPurchased",
+          "type": "event"
+        },
+        "0xa406ebcf5151e82763e43f65a824a89658d6e69a6d4b005507827ff898779cdd": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductSoldOut",
+          "type": "event"
+        },
+        "0x44d6d25963f097ad14f29f06854a01f575648a1ef82f30e562ccd3889717e339": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminAdded",
+          "type": "event"
+        },
+        "0xa3b62bc36326052d97ea62d63c3d60308ed4c3ea8ac079dd8499f1e9c4f80c0f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "removedAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminRemoved",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x8576d289be4387a9f6a8e946a4559420e4b0cf59",
+      "updated_at": 1505281422870
+    },
+    "1505284480919": {
+      "events": {
+        "0x7356fa97386fd8eedb6423c2102817d12f666667a979141224ac430d3f2a564e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "initialStock",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductAdded",
+          "type": "event"
+        },
+        "0x8d73b39fd1c1240bd6b0e38e6190cfa73f69346002fdbfa18c2156e6f91474d3": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductRemoved",
+          "type": "event"
+        },
+        "0xb083d772091ed56ae01bb80d9b0040593b2547bf9b5efd584c679704508df65b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductReactivated",
+          "type": "event"
+        },
+        "0x621472621639c4a230476ed039dff3e99add1be6bca286f58ed565e08e781a5f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductPurchased",
+          "type": "event"
+        },
+        "0xa406ebcf5151e82763e43f65a824a89658d6e69a6d4b005507827ff898779cdd": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductSoldOut",
+          "type": "event"
+        },
+        "0x44d6d25963f097ad14f29f06854a01f575648a1ef82f30e562ccd3889717e339": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminAdded",
+          "type": "event"
+        },
+        "0xa3b62bc36326052d97ea62d63c3d60308ed4c3ea8ac079dd8499f1e9c4f80c0f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "removedAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminRemoved",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x047b154cbb84a754582cebfdaa1dc68c8f0ea81e",
+      "updated_at": 1505284529749
+    },
+    "1505284686933": {
+      "events": {
+        "0x7356fa97386fd8eedb6423c2102817d12f666667a979141224ac430d3f2a564e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "initialStock",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductAdded",
+          "type": "event"
+        },
+        "0x8d73b39fd1c1240bd6b0e38e6190cfa73f69346002fdbfa18c2156e6f91474d3": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductRemoved",
+          "type": "event"
+        },
+        "0xb083d772091ed56ae01bb80d9b0040593b2547bf9b5efd584c679704508df65b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductReactivated",
+          "type": "event"
+        },
+        "0x621472621639c4a230476ed039dff3e99add1be6bca286f58ed565e08e781a5f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductPurchased",
+          "type": "event"
+        },
+        "0xa406ebcf5151e82763e43f65a824a89658d6e69a6d4b005507827ff898779cdd": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductSoldOut",
+          "type": "event"
+        },
+        "0x44d6d25963f097ad14f29f06854a01f575648a1ef82f30e562ccd3889717e339": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminAdded",
+          "type": "event"
+        },
+        "0xa3b62bc36326052d97ea62d63c3d60308ed4c3ea8ac079dd8499f1e9c4f80c0f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "removedAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminRemoved",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x7b4076fa60a649fe0f09935ed629a5a62f87f9ce",
+      "updated_at": 1505284695452
+    },
+    "1505284770303": {
+      "events": {
+        "0x7356fa97386fd8eedb6423c2102817d12f666667a979141224ac430d3f2a564e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "initialStock",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductAdded",
+          "type": "event"
+        },
+        "0x8d73b39fd1c1240bd6b0e38e6190cfa73f69346002fdbfa18c2156e6f91474d3": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductRemoved",
+          "type": "event"
+        },
+        "0xb083d772091ed56ae01bb80d9b0040593b2547bf9b5efd584c679704508df65b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductReactivated",
+          "type": "event"
+        },
+        "0x621472621639c4a230476ed039dff3e99add1be6bca286f58ed565e08e781a5f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductPurchased",
+          "type": "event"
+        },
+        "0xa406ebcf5151e82763e43f65a824a89658d6e69a6d4b005507827ff898779cdd": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductSoldOut",
+          "type": "event"
+        },
+        "0x44d6d25963f097ad14f29f06854a01f575648a1ef82f30e562ccd3889717e339": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminAdded",
+          "type": "event"
+        },
+        "0xa3b62bc36326052d97ea62d63c3d60308ed4c3ea8ac079dd8499f1e9c4f80c0f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "removedAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminRemoved",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xb3efd018cd810341c54cee242a3f3e6b5a5067ec",
+      "updated_at": 1505284779988
+    },
+    "1505285450964": {
+      "events": {
+        "0x7356fa97386fd8eedb6423c2102817d12f666667a979141224ac430d3f2a564e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "initialStock",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductAdded",
+          "type": "event"
+        },
+        "0x8d73b39fd1c1240bd6b0e38e6190cfa73f69346002fdbfa18c2156e6f91474d3": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductRemoved",
+          "type": "event"
+        },
+        "0xb083d772091ed56ae01bb80d9b0040593b2547bf9b5efd584c679704508df65b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductReactivated",
+          "type": "event"
+        },
+        "0x621472621639c4a230476ed039dff3e99add1be6bca286f58ed565e08e781a5f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductPurchased",
+          "type": "event"
+        },
+        "0xa406ebcf5151e82763e43f65a824a89658d6e69a6d4b005507827ff898779cdd": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductSoldOut",
+          "type": "event"
+        },
+        "0x44d6d25963f097ad14f29f06854a01f575648a1ef82f30e562ccd3889717e339": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminAdded",
+          "type": "event"
+        },
+        "0xa3b62bc36326052d97ea62d63c3d60308ed4c3ea8ac079dd8499f1e9c4f80c0f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "removedAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminRemoved",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xf8484abe0a5fcd5c700fcf1a93dce49a4e9f2523",
+      "updated_at": 1505285456682
+    },
+    "1505287863639": {
+      "events": {
+        "0x7356fa97386fd8eedb6423c2102817d12f666667a979141224ac430d3f2a564e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "initialStock",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductAdded",
+          "type": "event"
+        },
+        "0x8d73b39fd1c1240bd6b0e38e6190cfa73f69346002fdbfa18c2156e6f91474d3": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductRemoved",
+          "type": "event"
+        },
+        "0xb083d772091ed56ae01bb80d9b0040593b2547bf9b5efd584c679704508df65b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductReactivated",
+          "type": "event"
+        },
+        "0x621472621639c4a230476ed039dff3e99add1be6bca286f58ed565e08e781a5f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductPurchased",
+          "type": "event"
+        },
+        "0xa406ebcf5151e82763e43f65a824a89658d6e69a6d4b005507827ff898779cdd": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductSoldOut",
+          "type": "event"
+        },
+        "0x44d6d25963f097ad14f29f06854a01f575648a1ef82f30e562ccd3889717e339": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminAdded",
+          "type": "event"
+        },
+        "0xa3b62bc36326052d97ea62d63c3d60308ed4c3ea8ac079dd8499f1e9c4f80c0f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "removedAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminRemoved",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xeef9aa48e635438fb8ea6c8742a3a54526093b52",
+      "updated_at": 1505287944246
+    },
+    "1505288150160": {
+      "events": {
+        "0x7356fa97386fd8eedb6423c2102817d12f666667a979141224ac430d3f2a564e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "initialStock",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductAdded",
+          "type": "event"
+        },
+        "0x8d73b39fd1c1240bd6b0e38e6190cfa73f69346002fdbfa18c2156e6f91474d3": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductRemoved",
+          "type": "event"
+        },
+        "0xb083d772091ed56ae01bb80d9b0040593b2547bf9b5efd584c679704508df65b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductReactivated",
+          "type": "event"
+        },
+        "0x621472621639c4a230476ed039dff3e99add1be6bca286f58ed565e08e781a5f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductPurchased",
+          "type": "event"
+        },
+        "0xa406ebcf5151e82763e43f65a824a89658d6e69a6d4b005507827ff898779cdd": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductSoldOut",
+          "type": "event"
+        },
+        "0x44d6d25963f097ad14f29f06854a01f575648a1ef82f30e562ccd3889717e339": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminAdded",
+          "type": "event"
+        },
+        "0xa3b62bc36326052d97ea62d63c3d60308ed4c3ea8ac079dd8499f1e9c4f80c0f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "removedAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminRemoved",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xbf32e783287892a833e638d3d60ae39ec05a5790",
+      "updated_at": 1505288178163
+    },
+    "1505288738289": {
+      "events": {
+        "0x7356fa97386fd8eedb6423c2102817d12f666667a979141224ac430d3f2a564e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "initialStock",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductAdded",
+          "type": "event"
+        },
+        "0x8d73b39fd1c1240bd6b0e38e6190cfa73f69346002fdbfa18c2156e6f91474d3": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductRemoved",
+          "type": "event"
+        },
+        "0xb083d772091ed56ae01bb80d9b0040593b2547bf9b5efd584c679704508df65b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "adder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductReactivated",
+          "type": "event"
+        },
+        "0x621472621639c4a230476ed039dff3e99add1be6bca286f58ed565e08e781a5f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductPurchased",
+          "type": "event"
+        },
+        "0xa406ebcf5151e82763e43f65a824a89658d6e69a6d4b005507827ff898779cdd": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "productId",
+              "type": "uint256"
+            }
+          ],
+          "name": "ProductSoldOut",
+          "type": "event"
+        },
+        "0x44d6d25963f097ad14f29f06854a01f575648a1ef82f30e562ccd3889717e339": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminAdded",
+          "type": "event"
+        },
+        "0xa3b62bc36326052d97ea62d63c3d60308ed4c3ea8ac079dd8499f1e9c4f80c0f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "removedAdmin",
+              "type": "address"
+            }
+          ],
+          "name": "AdminRemoved",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xd5a2727bd6da06da1203190769b4eac744fc4725",
+      "updated_at": 1505289006419
     }
   },
   "schema_version": "0.0.5",
-  "updated_at": 1505202133522
+  "updated_at": 1505289006419
 }

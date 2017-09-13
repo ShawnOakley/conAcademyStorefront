@@ -1,0 +1,17 @@
+{
+  "contract_name": "Permissions",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "Owned",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    }
+  ],
+  "unlinked_binary": "0x60606040523415600e57600080fd5b5b607f8061001d6000396000f300606060405263ffffffff60e060020a600035041663b303dcbd81146023575b600080fd5b3415602d57600080fd5b60336035565b005b60008054600160a060020a03191633600160a060020a03161790555b5600a165627a7a72305820d5e04d8a818200b2f6f1a2adddb7aef5576cfc8a963285ba406163c81c788c9a0029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1505277566416
+}
