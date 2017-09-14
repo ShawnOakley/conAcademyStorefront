@@ -1,8 +1,7 @@
 pragma solidity ^0.4.10;
-
 import "./Owned.sol";
 
-contract StoreFront is Owned{
+contract StoreFront is Owned {
     struct Product {
         uint256 id;
         uint256 price;
@@ -15,7 +14,6 @@ contract StoreFront is Owned{
 
     mapping(address => bool) public adminPrivileges;
 
-    address public owner;
     uint256 balance;
 
     event ProductAdded(address adder, uint256 productId, uint256 price, uint256 initialStock);
@@ -25,11 +23,6 @@ contract StoreFront is Owned{
     event ProductSoldOut(uint256 productId);
     event AdminAdded(address newAdmin);
     event AdminRemoved(address removedAdmin);
-
-    modifier isOwner() {
-        require(msg.sender == owner);
-        _;
-    }
 
     modifier isAdmin() {
         require(adminPrivileges[msg.sender] != false);

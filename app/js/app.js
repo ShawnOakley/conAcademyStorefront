@@ -149,22 +149,25 @@ storefrontApp.controller("StorefrontController",
                 $scope.data.erc20Balances["testToken"][accounts[0]] = $scope.convertBigNumber(balanceArray[0]);
                 $scope.data.erc20Balances["testToken"][accounts[1]] = $scope.convertBigNumber(balanceArray[1]);
                 $scope.data.erc20Balances["testToken"][accounts[2]] = $scope.convertBigNumber(balanceArray[2]);
-                return $scope.affiliateMerchantHub.getAffiliateMerchantsCount()
-            }).then(function(_affiliateMerchantLength){
-                console.log("this", $scope.convertBigNumber(_affiliateMerchantLength));
-                if ($scope.convertBigNumber(_affiliateMerchantLength) === 0) {
-                    $scope.affiliateMerchantHub.createAffiliateMerchant(
-                        "testMerchant",
-                        {
-                            from: accounts[0],
-                            gas: 1000000
-                        });
-                }
-                $scope.constructAffiliateMerchants();
                 $scope.$apply();
+
             }).catch(function(err) {
                 console.log("_err", err);
             });
+//return $scope.affiliateMerchantHub.getAffiliateMerchantsCount()
+//            .then(function(_affiliateMerchantLength){
+//                console.log("this", $scope.convertBigNumber(_affiliateMerchantLength));
+//                if ($scope.convertBigNumber(_affiliateMerchantLength) === 0) {
+//                    $scope.affiliateMerchantHub.createAffiliateMerchant(
+//                        "testMerchant",
+//                        {
+//                            from: accounts[0],
+//                            gas: 1000000
+//                        });
+//                }
+////                $scope.constructAffiliateMerchants();
+//                $scope.$apply();
+//            })
 
             $scope.updateBalance();
             $scope.getInitialInfo();
