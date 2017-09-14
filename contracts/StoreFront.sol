@@ -1,6 +1,8 @@
 pragma solidity ^0.4.10;
 
-contract StoreFront {
+import "./Owned.sol";
+
+contract StoreFront is Owned{
     struct Product {
         uint256 id;
         uint256 price;
@@ -45,7 +47,6 @@ contract StoreFront {
     }
 
     function StoreFront() {
-        owner = msg.sender;
         adminPrivileges[owner] = true;
         inventoryLength = 0;
     }

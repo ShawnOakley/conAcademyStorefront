@@ -1,8 +1,9 @@
 pragma solidity ^0.4.10;
 
 import "./AffiliateMerchant.sol";
+import "./Owned.sol";
 
-contract AffiliateMerchantHub {
+contract AffiliateMerchantHub is Owned {
 
     event LogAffiliateMerchantCreated(address owner, address merchant, string vendorName);
     event LogAffiliateMerchantOpened(address owner, address merchant);
@@ -18,9 +19,6 @@ contract AffiliateMerchantHub {
         bool active;
     }
 
-    function AffiliateMerchantHub() {
-        owner = msg.sender;
-    }
     modifier isOwner() {
         require(msg.sender == owner);
         _;
@@ -40,6 +38,9 @@ contract AffiliateMerchantHub {
         return affiliateMerchants[merchantIndex];
     }
 
+// Use delegate call
+//  https://ethereum.stackexchange.com/questions/8120/how-does-the-delegatecall-method-work-to-call-to-another
+// -contracts-method
 
     function getAffiliateMerchantInventory(uint256 merchantIndex, uint productIndex)
     constant

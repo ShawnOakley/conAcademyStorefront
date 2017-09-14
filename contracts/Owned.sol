@@ -1,9 +1,9 @@
 pragma solidity ^0.4.10;
 
 /**
- * Contracts for Permissions
+ * Contracts for Owned
  */
-contract Permissions {
+contract Owned {
     address owner;
     function Owned() {
         owner = msg.sender;

@@ -1,7 +1,8 @@
 pragma solidity ^0.4.10;
 
+import "./Owned.sol";
 
-contract AffiliateMerchant {
+contract AffiliateMerchant is Owned{
     struct Product {
     uint256 id;
     uint256 price;
