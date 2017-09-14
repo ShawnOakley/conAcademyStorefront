@@ -27,7 +27,8 @@
             <label>Your balance:</label> {{ data.balance }} (wei) {{data.balanceInEth}} (ether)
         </div>
         <div class="card-text">
-            <label>Your testCoin balance:</label> {{data.erc20Balances["testToken"][data.account.value]}}
+            <label>Your testCoin balance:</label> {{data.erc20Balances["testToken"][data.account.value]}} (Current
+            conversion rate: 2 to 1)
         </div>
         <div ng-if="data.permissions.owner">
             <div style="margin:1rem 0;"><label>Available funds to withdraw:</label> {{data.contractBalance}}</div>
