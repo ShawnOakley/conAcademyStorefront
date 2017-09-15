@@ -851,8 +851,71 @@
       "links": {},
       "address": "0x8c6570ee6eecc9e32e3bd20be16bfd638f01d4a6",
       "updated_at": 1505365132748
+    },
+    "1505443876485": {
+      "events": {
+        "0x9489a6bcde5ddefa7037d3e5da26bd4f5aa13f1d52a0660f0c6570f60fbd5c8b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "merchant",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "vendorName",
+              "type": "string"
+            }
+          ],
+          "name": "LogAffiliateMerchantCreated",
+          "type": "event"
+        },
+        "0x732b7eb30731b89ae317d32de0b811702a3855dc22646fdd3c1c27fd7b7344c2": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "merchant",
+              "type": "address"
+            }
+          ],
+          "name": "LogAffiliateMerchantOpened",
+          "type": "event"
+        },
+        "0x2a670f91850309d406c3474047c38b24f13a12e3618ab545e38d621c92ee2f48": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "merchant",
+              "type": "address"
+            }
+          ],
+          "name": "LogAffiliateMerchantClosed",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x0a4e48d8533f4bd3857633f5997bfb788695a355",
+      "updated_at": 1505443893949
     }
   },
   "schema_version": "0.0.5",
-  "updated_at": 1505365132748
+  "updated_at": 1505443893949
 }

@@ -33,6 +33,28 @@ const storefrontApp = angular.module("storefrontApp", []);
 storefrontApp.controller("StorefrontController",
     ["$scope","$location","$http","$q","$window","$timeout",
     function($scope, $location, $http, $q, $timeout) {
+
+        $scope.toggleGroupBuy = function() {
+            $scope.data.groupBuy = $scope.data.groupBuy === false ? true: false;
+             $scope.data.collectedGroups=[];
+        };
+
+        $scope.groupBuyClick = function(clickVal) {
+            let index = $scope.data.collectedGroups.indexOf(clickVal);
+            if (index < 0) {
+                $scope.data.collectedGroups.push(clickVal);
+            } else {
+                $scope.data.collectedGroups.splice(index, 1);
+            }
+        }
+
+        $scope.buyAsAGroup = function() {
+
+        }
+
+        $scope.example1model = [];
+        $scope.example1data = [ {id: 1, label: "David"}, {id: 2, label: "Jhon"}, {id: 3, label: "Danny"} ];
+
        $scope.data = {
             account: null,
             permissions: {
@@ -49,6 +71,7 @@ storefrontApp.controller("StorefrontController",
             toggleState: {
                 homeMerchant: true
             },
+            groupBuy: false,
             affiliateMerchants: {}
        };
 
@@ -199,12 +222,10 @@ storefrontApp.controller("StorefrontController",
                 }
 
                 Promise.all(merchantRequestArray).then((returnedMerchantObjects)=>{
-                    console.log("merchants", returnedMerchantObjects);
                     return $scope.affiliateMerchantHub.addAffiliateMerchantProduct(0, {gas: 200000});
                 }).then((_inventoryLength) => {
                     return $scope.affiliateMerchantHub.getAffiliateMerchantInventoryLength(0);
                 }).then((_inventoryLength) => {
-                      console.log("_inventoryLength", $scope.convertBigNumber(_inventoryLength));
                       return $scope.affiliateMerchantHub.getAffiliateMerchantInventoryLength(0);
                   });
             })

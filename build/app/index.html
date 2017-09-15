@@ -10,15 +10,6 @@
 <body ng-controller="StorefrontController">
 <div class="card">
     <h3  style="margin:4rem 4rem 0 4rem;">Account Information</h3>
-    <div style="margin-left:4rem;">
-        <label for="selectActiveAccount">Select active account:</label>
-        <select
-                id="selectActiveAccount"
-                ng-model="data.account"
-                ng-options="account.label for account in accounts track by account.value"
-                ng-change="activeAccountChanged()"
-        ></select>
-    </div>
     <div class="card-body" style="margin: 4rem;">
         <div class="card-text">
             <label>Your account:</label> {{ data.account.value }}
@@ -27,14 +18,30 @@
             <label>Your balance:</label> {{ data.balance }} (wei) {{data.balanceInEth}} (ether)
         </div>
         <div class="card-text">
-            <label>Your testCoin balance:</label> {{data.erc20Balances["testToken"][data.account.value]}} (Current
-            conversion rate: 2 to 1)
+            <label>Your testCoin balance:</label> {{data.erc20Balances["testToken"][data.account.value]}}
         </div>
         <div ng-if="data.permissions.owner">
             <div style="margin:1rem 0;"><label>Available funds to withdraw:</label> {{data.contractBalance}}</div>
             <div ng-if="data.contractBalance">
                 <button ng-click="withdrawFunds()">Withdraw funds</button>
             </div>
+        </div>
+    </div>
+    <div style="margin-left:4rem;">
+        <button ng-click="toggleGroupBuy()">{{data.groupBuy ? "Select Group Purchasers" : "Toggle Group Buy"}}</button>
+            <span ng-hide="!data.groupBuy">
+                <div ng-repeat="account in accounts">
+                    <input type="checkbox" ng-click="groupBuyClick(account.value)"/> {{ account.label }}
+                </div>
+            </span>
+        <div ng-hide="data.groupBuy">
+            <label for="selectActiveAccount">Select active account:</label>
+            <select
+                    id="selectActiveAccount"
+                    ng-model="data.account"
+                    ng-options="account.label for account in accounts track by account.value"
+                    ng-change="activeAccountChanged()"
+            ></select>
         </div>
     </div>
 </div>
@@ -75,11 +82,16 @@
                     <div>ID: {{product.id}}</div>
                     <div>Price: {{product.price}}</div>
                     <div>Stock: {{product.stock}}</div>
-                    <button class="btn btn-primary"  ng-click="buyProduct(product.id, product.price)">
+                    <button ng-hide="data.groupBuy" class="btn btn-primary"  ng-click="buyProduct(product.id, product.price)">
                         Buy
                     </button>
-                    <button class="btn btn-primary" ng-click="purchaseWithERC20Token('testToken', product.id, 1)">
+                    <button ng-hide="data.groupBuy" class="btn btn-primary" ng-click="purchaseWithERC20Token('testToken', product.id, 1)">
                         Buy with testToken
+                    </button>
+                    <button ng-hide="!data.groupBuy"
+                            class="btn btn-primary"
+                            ng-click="buyAsAGroup()">
+                        Buy as a group
                     </button>
                     <button class="btn btn-primary" ng-if="product.active && data.permissions.admin" ng-click="removeProduct(product.id)">
                         Remove Product
@@ -90,7 +102,7 @@
                     <div>ID: {{product.id}}</div>
                     <div>Price: {{product.price}}</div>
                     <div>Stock: {{product.stock}}</div>
-                    <button class="btn btn-primary" ng-disabled="true">
+                    <button ng-hide="data.groupBuy" class="btn btn-primary" ng-disabled="true">
                         Buy
                     </button>
                     <button class="btn btn-primary"

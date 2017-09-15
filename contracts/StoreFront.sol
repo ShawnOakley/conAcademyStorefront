@@ -9,12 +9,16 @@ contract StoreFront is Owned {
         bool active;
     }
 
+    uint256 public testCoinConversionRate;
+
     mapping(uint256 => Product) public inventory;
     uint256 inventoryLength;
 
     mapping(address => bool) public adminPrivileges;
 
     uint256 balance;
+
+    bool allowed;
 
     event ProductAdded(address adder, uint256 productId, uint256 price, uint256 initialStock);
     event ProductRemoved(address adder, uint256 productId);
@@ -42,6 +46,7 @@ contract StoreFront is Owned {
     function StoreFront() {
         adminPrivileges[owner] = true;
         inventoryLength = 0;
+        allowed=false;
     }
 
     function addAdmin(address newAdmin)
@@ -70,9 +75,9 @@ contract StoreFront is Owned {
     }
 
     function getOwnerStatus(address adminAddress)
-    public
-    constant
-    returns (bool) {
+        public
+        constant
+        returns (bool) {
         return owner == adminAddress;
     }
 
