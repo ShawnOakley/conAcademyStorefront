@@ -28,7 +28,8 @@
         </div>
     </div>
     <div style="margin-left:4rem;">
-        <button ng-click="toggleGroupBuy()">{{data.groupBuy ? "Select Group Purchasers" : "Toggle Group Buy"}}</button>
+        <button ng-click="toggleGroupBuy()">{{data.groupBuy ? "Return to individual purchasing" : "Toggle Group
+            Buy"}}</button>
             <span ng-hide="!data.groupBuy">
                 <div ng-repeat="account in accounts">
                     <input type="checkbox" ng-click="groupBuyClick(account.value)"/> {{ account.label }}
@@ -90,7 +91,7 @@
                     </button>
                     <button ng-hide="!data.groupBuy"
                             class="btn btn-primary"
-                            ng-click="buyAsAGroup()">
+                            ng-click="groupBuyProduct(product.id, product.price)">
                         Buy as a group
                     </button>
                     <button class="btn btn-primary" ng-if="product.active && data.permissions.admin" ng-click="removeProduct(product.id)">

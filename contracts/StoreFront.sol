@@ -1,5 +1,6 @@
 pragma solidity ^0.4.10;
 import "./Owned.sol";
+import "./SafeMath.sol";
 
 contract StoreFront is Owned {
     struct Product {
@@ -40,6 +41,11 @@ contract StoreFront is Owned {
 
     modifier isAvailable(uint256 productId) {
         require(inventory[productId].stock > 0);
+        _;
+    }
+
+    modifier groupCanAfford(uint256 productId, uint256 groupSize) {
+        require(SafeMath.div(inventory[productId].price,groupSize) <= msg.value);
         _;
     }
 
@@ -189,5 +195,21 @@ contract StoreFront is Owned {
             removeProduct(inventoryId);
             ProductSoldOut(inventoryId);
         }
+    }
+
+    function groupBuyProduct(uint256 inventoryId, uint256 groupNumber)
+    payable
+    external
+    isAvailable(inventoryId)
+    groupCanAfford(inventoryId, groupNumber)
+    {
+        bool completeBool = true;
+        uint256 remainder = msg.value - SafeMath.div(inventory[inventoryId].price,groupNumber);
+        completeBool = msg.sender.send(remainder);
+        if (!completeBool) {
+            revert();
+        }
+        // remember to call adjust product inventory in client on success
+        ProductPurchased(msg.sender, inventoryId);
     }
 }

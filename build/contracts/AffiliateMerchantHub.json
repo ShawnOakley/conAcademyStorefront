@@ -914,8 +914,323 @@
       "links": {},
       "address": "0x0a4e48d8533f4bd3857633f5997bfb788695a355",
       "updated_at": 1505443893949
+    },
+    "1505589956269": {
+      "events": {
+        "0x9489a6bcde5ddefa7037d3e5da26bd4f5aa13f1d52a0660f0c6570f60fbd5c8b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "merchant",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "vendorName",
+              "type": "string"
+            }
+          ],
+          "name": "LogAffiliateMerchantCreated",
+          "type": "event"
+        },
+        "0x732b7eb30731b89ae317d32de0b811702a3855dc22646fdd3c1c27fd7b7344c2": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "merchant",
+              "type": "address"
+            }
+          ],
+          "name": "LogAffiliateMerchantOpened",
+          "type": "event"
+        },
+        "0x2a670f91850309d406c3474047c38b24f13a12e3618ab545e38d621c92ee2f48": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "merchant",
+              "type": "address"
+            }
+          ],
+          "name": "LogAffiliateMerchantClosed",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x28c6a64743027335fac3d977ba034d808082a573",
+      "updated_at": 1505590154930
+    },
+    "1505590177587": {
+      "events": {
+        "0x9489a6bcde5ddefa7037d3e5da26bd4f5aa13f1d52a0660f0c6570f60fbd5c8b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "merchant",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "vendorName",
+              "type": "string"
+            }
+          ],
+          "name": "LogAffiliateMerchantCreated",
+          "type": "event"
+        },
+        "0x732b7eb30731b89ae317d32de0b811702a3855dc22646fdd3c1c27fd7b7344c2": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "merchant",
+              "type": "address"
+            }
+          ],
+          "name": "LogAffiliateMerchantOpened",
+          "type": "event"
+        },
+        "0x2a670f91850309d406c3474047c38b24f13a12e3618ab545e38d621c92ee2f48": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "merchant",
+              "type": "address"
+            }
+          ],
+          "name": "LogAffiliateMerchantClosed",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x21ca92616b40bfab8ee6095049407ef1f6352ae0",
+      "updated_at": 1505590187964
+    },
+    "1505590508807": {
+      "events": {
+        "0x9489a6bcde5ddefa7037d3e5da26bd4f5aa13f1d52a0660f0c6570f60fbd5c8b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "merchant",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "vendorName",
+              "type": "string"
+            }
+          ],
+          "name": "LogAffiliateMerchantCreated",
+          "type": "event"
+        },
+        "0x732b7eb30731b89ae317d32de0b811702a3855dc22646fdd3c1c27fd7b7344c2": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "merchant",
+              "type": "address"
+            }
+          ],
+          "name": "LogAffiliateMerchantOpened",
+          "type": "event"
+        },
+        "0x2a670f91850309d406c3474047c38b24f13a12e3618ab545e38d621c92ee2f48": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "merchant",
+              "type": "address"
+            }
+          ],
+          "name": "LogAffiliateMerchantClosed",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x367e1d3ceb8d9509b70a68661800c9111fca294f",
+      "updated_at": 1505590523884
+    },
+    "1505590607882": {
+      "events": {
+        "0x9489a6bcde5ddefa7037d3e5da26bd4f5aa13f1d52a0660f0c6570f60fbd5c8b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "merchant",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "vendorName",
+              "type": "string"
+            }
+          ],
+          "name": "LogAffiliateMerchantCreated",
+          "type": "event"
+        },
+        "0x732b7eb30731b89ae317d32de0b811702a3855dc22646fdd3c1c27fd7b7344c2": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "merchant",
+              "type": "address"
+            }
+          ],
+          "name": "LogAffiliateMerchantOpened",
+          "type": "event"
+        },
+        "0x2a670f91850309d406c3474047c38b24f13a12e3618ab545e38d621c92ee2f48": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "merchant",
+              "type": "address"
+            }
+          ],
+          "name": "LogAffiliateMerchantClosed",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xeae26dfc873a5efd758099a2c0d1ccbd4991958d",
+      "updated_at": 1505590631646
+    },
+    "1505590701251": {
+      "events": {
+        "0x9489a6bcde5ddefa7037d3e5da26bd4f5aa13f1d52a0660f0c6570f60fbd5c8b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "merchant",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "vendorName",
+              "type": "string"
+            }
+          ],
+          "name": "LogAffiliateMerchantCreated",
+          "type": "event"
+        },
+        "0x732b7eb30731b89ae317d32de0b811702a3855dc22646fdd3c1c27fd7b7344c2": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "merchant",
+              "type": "address"
+            }
+          ],
+          "name": "LogAffiliateMerchantOpened",
+          "type": "event"
+        },
+        "0x2a670f91850309d406c3474047c38b24f13a12e3618ab545e38d621c92ee2f48": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "merchant",
+              "type": "address"
+            }
+          ],
+          "name": "LogAffiliateMerchantClosed",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x955c15385c2885ef03bea62a20c812b16098bb86",
+      "updated_at": 1505590719473
     }
   },
   "schema_version": "0.0.5",
-  "updated_at": 1505443893949
+  "updated_at": 1505590719473
 }

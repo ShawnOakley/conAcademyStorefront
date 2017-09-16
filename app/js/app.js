@@ -48,10 +48,6 @@ storefrontApp.controller("StorefrontController",
             }
         }
 
-        $scope.buyAsAGroup = function() {
-
-        }
-
         $scope.example1model = [];
         $scope.example1data = [ {id: 1, label: "David"}, {id: 2, label: "Jhon"}, {id: 3, label: "Danny"} ];
 
@@ -535,6 +531,48 @@ storefrontApp.controller("StorefrontController",
                     $scope.updateProduct(id);
                     $scope.$apply();
                 });
+        };
+
+        $scope.groupBuyProduct = function(id, price) {
+
+            const groupIds = $scope.data.collectedGroups;
+            let groupLength = groupIds.length;
+            if (groupLength > 0) {
+                let groupPurchasePromises = [];
+                let perPersonPrice = price/groupLength;
+                groupIds.forEach((groupId)=>{
+                console.log("++", id, groupLength);
+                    groupPurchasePromises.push(
+                        $scope.contract.groupBuyProduct(
+                            id,
+                            groupLength,
+                            {
+                                value: perPersonPrice,
+                                gas: 100000,
+                                from: groupId
+                            }
+                        )
+                    );
+                })
+                Promise.all(groupPurchasePromises).then(function(_trx) {
+                    return web3.eth.getBalancePromise($scope.data.account.value)
+                }).then(function(balance) {
+                    $scope.data.balance = balance.toString();
+                    $scope.data.balanceInEth = web3.fromWei(parseInt(balance.toString()), "ether");
+                    return $scope.contract.getBalance();
+                }).then(function(_balance) {
+                    $scope.data.contractBalance = parseInt(_balance.toString());
+                    return $scope.contract.adjustProductInventory(id, -1, {
+                        from: $scope.owner,
+                        gas: 200000
+                    });
+                }).then((_trx)=>{
+                    $scope.updateProduct(id);
+                    $scope.$apply();
+                }).catch((err)=>{
+                    console.log(err);
+                });
+            }
         };
     }]
 );

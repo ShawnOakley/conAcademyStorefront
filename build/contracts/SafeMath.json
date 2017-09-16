@@ -1,0 +1,39 @@
+{
+  "contract_name": "SafeMath",
+  "abi": [],
+  "unlinked_binary": "0x60606040523415600e57600080fd5b5b603680601c6000396000f30060606040525b600080fd00a165627a7a723058205f8782c5e9ef666277f779fe455e9972c2e5458bb9a06b55523834cec97316270029",
+  "networks": {
+    "1505589956269": {
+      "events": {},
+      "links": {},
+      "address": "0xdba6bb16e181204b296f93af06ad19029d8a76ea",
+      "updated_at": 1505590155031
+    },
+    "1505590177587": {
+      "events": {},
+      "links": {},
+      "address": "0xd80800dcdb6e2faac5f4f4a705fe093715d95545",
+      "updated_at": 1505590188056
+    },
+    "1505590508807": {
+      "events": {},
+      "links": {},
+      "address": "0xa66437d7a9a638ffee6f54e0165e5e476cda3ee5",
+      "updated_at": 1505590523971
+    },
+    "1505590607882": {
+      "events": {},
+      "links": {},
+      "address": "0x2b3c8a1a4e50a421a803f251c941324db0a2ffbd",
+      "updated_at": 1505590631737
+    },
+    "1505590701251": {
+      "events": {},
+      "links": {},
+      "address": "0xb353603e05b1d034dc8d4e949fae464c18d92be5",
+      "updated_at": 1505590719578
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1505590719578
+}
